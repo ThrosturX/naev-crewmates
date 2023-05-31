@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="Sea of Crewmates">
+    <author>ThrosturX</author>
+    <version>0.11</version>
+    <compatibility>0\.(10|11)\..*</compatibility>
+    <priority>1</priority>
+    <description>Adds hireable crew to the game. Once hired, they live and breathe on your ship, can be promoted, have their own little personalities and engage in conversations between themselves.</description>
+</plugin>
