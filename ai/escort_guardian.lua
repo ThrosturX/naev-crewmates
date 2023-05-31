@@ -11,8 +11,6 @@ mem.send_escort = true
 mem.autoleader =  false
 
 function create ()
-   create_pre()
-
    local p = ai.pilot()
    local ps = p:ship()
 
@@ -20,9 +18,6 @@ function create ()
    mem.guarddodist   = 1000 + 200 * ps:size()
    mem.guardreturndist = mem.guarddodist + 2000
    mem.enemyclose    = mem.guarddodist
-
-   -- Finish up creation
-   create_post()
 end
 
 -- is it close to me or my protectee?
@@ -43,12 +38,11 @@ end
 
 -- luacheck: globals idle (AI Task functions passed by name)
 function idle ()
-
    local pp = player.pilot()
    local me = ai.pilot()
    local subordinates = me:followers()
 
-   local hostiles = pp:getHostiles(mem.guarddodist, me:pos(), true, false, false)
+   local hostiles = pp:getEnemies(mem.guarddodist, me:pos(), true, false, false)
    local detected_hostile = nil
    local can_send = rnd.rnd(1, #subordinates * 2) == #subordinates
 
@@ -80,7 +74,7 @@ function idle ()
    local guarddist = ai.dist(pp:pos())
    if guarddist > mem.guardreturndist then
          ai.iface(pp)
-      ai.accel(1)
+         ai.accel(1)
       return
    end
 
@@ -133,4 +127,3 @@ function idle ()
    ai.iface(pp)
    ai.accel()
 end
-
