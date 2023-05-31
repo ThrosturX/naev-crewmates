@@ -46,7 +46,7 @@ function idle ()
    local detected_hostile = nil
    local can_send = rnd.rnd(1, #subordinates * 2) == #subordinates
 
-   for i, enemy in ipairs(hostiles) do
+   for _, enemy in ipairs(hostiles) do
       if should_attack(enemy) then
          local dangerous = false
          if enemy:ship():size() >= 3 then
@@ -54,9 +54,8 @@ function idle ()
          end
 
          if dangerous then
-            for j, under in ipairs(subordinates) do
+            for _, under in ipairs(subordinates) do
                me:msg(under, "e_attack", enemy)
---               under:pushtask( "attack", enemy )
             end
             ai.pushtask( "attack", enemy )
             return
@@ -87,21 +86,27 @@ function idle ()
             return
          elseif (should_attack(target) or (mem.aggressive and not ai.canboard(target))) and rnd.rnd(0, 1) == 0 then
             -- a pot shot or two
+            ai.hostile(target)
             ai.settarget( target )
             ai.aim(target)
             ai.shoot()
+            if not detected_hostile or ai.dist2(detected_hostile) > ai.dist2(target) then
+                detected_hostile = target
+            end
          end
       end
    end
 
-      -- find nearby enemy
+   -- find nearby enemy
    local enemy = detected_hostile
    if not enemy then
       enemy = ai.getenemy()
    end
    if enemy ~= nil then
-      for k, v in ipairs(me:followers()) do
-         me:msg ( v, "e_attack", enemy )
+      ai.hostile(enemy)
+      ai.weapset( 5 )
+      for _, under in ipairs(me:followers()) do
+         me:msg(under, "e_attack", enemy)
       end
       ai.pushtask("attack", enemy)
    end
@@ -127,3 +132,4 @@ function idle ()
    ai.iface(pp)
    ai.accel()
 end
+
