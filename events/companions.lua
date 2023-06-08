@@ -15,7 +15,7 @@
    crewmate conversation and behavior in space.
 
    TODO NOTES:
-   
+ 
    - Missing tutorials and info about the following:
     * the crew wants stuff like food and water, so ideally you keep a few tons of food in your cargo
 	* opening crates has hidden fees (restocking fruit)
@@ -39,7 +39,7 @@
 		finally do cool things. Same for the smuggler.
 	* speaking of which -- the first officer can do some cool stuff
 		that isn't explained anywhere like rename crew or throw out of airlock
-		
+	
 	More TODO:
 	- Promotion path from lieutenant to officer
 	- ship_interior.facilities {} that can something like:
@@ -3114,7 +3114,7 @@ function start_conversation()
 
     -- hook initiation of a new conversation
     hook.rm(mem.conversation_hook)
-    mem.conversation_hook = hook.date(time.create(0, 1, rnd.rnd(0, 300)), "start_conversation")
+    mem.conversation_hook = hook.date(time.new(0, 1, rnd.rnd(0, 300)), "start_conversation")
 end
 
 -- randomly picks a planet belonging to a faction, or "my home planet" if it didn't pick one before it ran out
@@ -6786,7 +6786,7 @@ function land()
 				crewmate.last_paid = time.get()
 			else
 				local dt = time.get() - crewmate.last_paid
-				if dt > time.create(0, 15, 0) then
+				if dt > time.new(0, 15, 0) then
 					if estimated < crewmate.salary then
 						-- the crewmate is unhappy and loses experience
 						-- (gets demotivated, hopefully we get it back with the paycheck)
@@ -6805,7 +6805,7 @@ function land()
 							crewmate.xp = 1 -- reset xp so we don't get double promotion!
 						end
 					end
-					local salary_resolution = time.create(0, 32, 0)
+					local salary_resolution = time.new(0, 32, 0)
 					local multiplier = dt:tonumber() / salary_resolution:tonumber()
 					local calculated = estimated * multiplier
 					local ttpaid = paid[crewmate.typetitle] or 0
@@ -6830,6 +6830,8 @@ function land()
 		end
 	end
 	
+    print("paid salaries")
+
     -- pay for any other incurred costs
     for item, cost in pairs(mem.costs) do
         player.pay(-cost)
@@ -6918,7 +6920,7 @@ function enter()
 
     -- set the fatigue hook
     hook.rm(mem.fatigue_hook)
-    mem.fatigue_hook = hook.date(time.create(0, 2, 0), "period_fatigue", nil)
+    mem.fatigue_hook = hook.date(time.new(0, 2, 0), "period_fatigue", nil)
 end
 
 function register_hook_crewmate( crewmate )
@@ -7099,7 +7101,7 @@ function period_fatigue()
     local next_fatigue = rnd.rnd(7500, 9950)
     -- set the next period fatigue timer
     hook.rm(mem.fatigue_hook)
-    mem.fatigue_hook = hook.date(time.create(0, 1, next_fatigue), "period_fatigue", nil)
+    mem.fatigue_hook = hook.date(time.new(0, 1, next_fatigue), "period_fatigue", nil)
 end
 
 -- remove the crewmember from the ship
@@ -10105,7 +10107,7 @@ function hydroponics_farm( scientist )
 		-- we have enough water to create food
 		if water_has > water_needed then
 			-- we won't be ready to do this again for a while
-			scientist.ready = time.get() + time.create( 0, 256 - scientist.xp - scientist.bonus, 20 - scientist.satisfaction)
+			scientist.ready = time.get() + time.new( 0, 256 - scientist.xp - scientist.bonus, 20 - scientist.satisfaction)
 			
 			player.pilot():cargoRm("Water", water_needed)
 			player.pilot():cargoAdd("Food", math.max(1, scientist.xp * 0.06))
@@ -10126,7 +10128,7 @@ function hydroponics_farm( scientist )
 			scientist.manager.special.crate = crate
 			scientist.manager.special.price = 0
 		else -- check again in 2 periods
-			scientist.ready = time.get() + time.create( 0, 2, 0 )
+			scientist.ready = time.get() + time.new( 0, 2, 0 )
 		end
 	end
 	if scientist.hook and scientist.hook.hook then
