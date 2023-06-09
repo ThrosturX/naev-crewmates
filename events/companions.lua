@@ -9203,6 +9203,8 @@ You'll be charged for the parts immediately, but you won't be charged for the wo
 		then
 			shuttle_candidate = ship.get("Cargo Shuttle")
 		end
+
+        -- print( fmt.f("Shuttle Cardidate is {this} of size {size}", { this=shuttle_candidate, size=shuttle_candidate:size() } ) )
 		
 		-- find a reason to stop the player
 		local reason
@@ -9216,10 +9218,10 @@ You'll be charged for the parts immediately, but you won't be charged for the wo
 		elseif player.credits() < shuttle_candidate:price() then -- budget issue, can't afford
 			reason = _("I'll be laughed at for not having the credits. I need you to be able to authorize a payment of at least ") .. fmt.credits(shuttle_candidate:price()) .. _(" in order to buy a ") .. shuttle_candidate:name() .. (" here.")
 		elseif
-			(shuttle_candidate:size() > 2					  -- too big for a private shuttle
+			( shuttle_candidate:size() > 2					  -- too big for a private shuttle
 			or shuttle_candidate:size() > math.floor(mem.ship_interior.bay_strength / 3) -- doesn't fit in bays
 			or shuttle_candidate:tags().bioship				-- no inspace refit
-			) and not shuttle_candidate:nameRaw() == "Cargo Shuttle"
+			) and shuttle_candidate:nameRaw() ~= "Cargo Shuttle"
 		then
 			reason = _("I'll be stuck with a ship without a hyperdrive, and I won't even be able to squeeze it into your fighter bays.")
 		elseif	-- already have this on board and we aren't an officer pilot
