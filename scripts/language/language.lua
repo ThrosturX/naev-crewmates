@@ -405,13 +405,17 @@ nouns.objects.items = {
 	_("spoon"),
 	_("fork"),
 	_("spork"),
+	_("knife"),
+	_("blade"),
 	_("chopstick"),
 	_("broom"),
 	_("mop"),
 	_("bucket"),
+	_("container"),
 	_("sculpture"),
 	_("figurine"),
 	_("statue"),
+	_("plushie"),
 	_("painting"),
 	_("photograph"),
 	_("polaroid"),
@@ -425,6 +429,7 @@ nouns.objects.items = {
 	_("sword"),
 	_("ornament"),
 	_("decoration"),
+	_("candle"),
 	
 }
 
