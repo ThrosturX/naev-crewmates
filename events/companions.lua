@@ -2888,6 +2888,11 @@ local function converse_topic(topic, talker, other)
 end
 
 local function speak(talker, other)
+    if true then
+        print("skipping speech")
+        return
+    end
+
 	local colour = "F"
 	local choices
 	local last_sentiment = talker.conversation.sentiment
@@ -6674,6 +6679,8 @@ function land()
 		-- not getting fatigued now
 		hook.rm(mem.fatigue_hook)
 		mem.fatigue_hook = nil
+        print("reset mothership")
+		mothership = player.ship()
 	end
 	
 	
@@ -6897,15 +6904,20 @@ function enter()
 		if cmdr.ghost.hook then
 			print("commander ghost already had a hook!")
 			print(cmdr.ghost.hook)
+			hook.rm(cmdr.ghost.hook)
 		else
-			print("creating ghost hook because of enter")
-			cmdr.ghost.hook = hook.timer( rnd.rnd(1, 120 - cmdr.xp), "spawn_ghost_commander2", cmdr)
-			print(cmdr.ghost.hook)
+			print("commander ghost doesn't have any hook")
 		end
+		print("creating ghost hook because of enter")
+		cmdr.ghost.hook = hook.timer( rnd.rnd(1, 120 - cmdr.xp), "spawn_ghost_commander2", cmdr)
+		print(cmdr.ghost.hook)
 		return
 	else
 		print("enter reset mother")
 		mothership = player.ship()
+        commander.ghost = nil
+        ghost_commander = nil
+        print("ghost cleared")
 	end
 	
 	if #mem.companions == 0 then
@@ -11242,6 +11254,7 @@ end
 -- if we are at low power, the engineer tries to burn armor as fuel to generate power
 -- an unsatisfied engineer will waste power and drain armor (but earn satisfaction and stabilize)
 function engineer_power(engineer)
+    print("power engineer!")
 	if engineer.hook and engineer.hook.hook then
 		hook.rm(engineer.hook.hook)
 	end
@@ -11250,14 +11263,15 @@ function engineer_power(engineer)
 	local armour, _shield, _stress = pp:health(true)
 	if armour == nil then return end
 	local current_power = pp:energy(true)
---	print(fmt.f("armour {armour} points energy {cp} ({energy} %)", { energy=pp:energy(), cp = current_power, armour=armour }))
+  	print(fmt.f("armour {armour} points energy {cp} ({energy} %)", { energy=pp:energy(), cp = current_power, armour=armour }))
 	if pp:energy() < math.min(50, 20 + engineer.xp * 0.1) then
 		-- try to initiate a power surge
-		local surge = engineer.xp * engineer.satisfaction * pp:ship():size() * 0.1
+		local surge = engineer.xp * engineer.satisfaction * pp:ship():size() * 0.01
 		local armor_needed = math.max(engineer.xp * 0.1, surge * (120 - engineer.xp) - engineer.bonus) / (10 - pp:ship():size())
---		print(fmt.f("armourneeded {armour_needed}/{armour} points surge {surge}", { energy=pp:energy(), cp = current_power, armour=armour, armour_needed=armor_needed, surge=surge }))
+  		print(fmt.f("armourneeded {armour_needed}/{armour} points surge {surge}", { energy=pp:energy(), cp = current_power, armour=armour, armour_needed=armor_needed, surge=surge }))
 		-- learn to not be too greedy with the armor
 		if armour > armor_needed * math.max(1, engineer.xp * 0.1) then
+            print(fmt.f("adding {pwr} power at expense of {arm} armor", { pwr=surge * 4, arm=armor_needed } ))
 			pp:setEnergy(current_power + surge * 4, true)
 			pp:addHealth(-armor_needed)
 			engineer.satisfaction = engineer.satisfaction + 0.01
@@ -11273,6 +11287,8 @@ function engineer_power(engineer)
 				-- act normally
 				speak(engineer)
 			end -- otherwise: just stay silent
+        else
+            print(fmt.f("engineer didn't do anything because {armor} < {armor_needed}", { armor=armour, armor_needed = armor_needed * engineer.xp * 0.1 } ))
 		end
 	end
 	
@@ -11517,16 +11533,16 @@ function player_swaps_from_shuttle(args)
 		hook.rm(commander.ghost.hook)
 		commander.ghost.hook = nil
 	end
+    print(commander.ghost)
 	commander.ghost = nil
 	ghost_commander = nil
+    print("ghost cleared")
 end
 
 -- if the player swapped out of his own ship in space, or if
 -- the player despawned his own ship while landing, we need to respawn it
 function spawn_ghost_commander2( commander )
-	print(commander)
-	print(commander.ghost)
-	print(commander.pilot)
+    print(commander.ghost)
 	if	commander.ghost and
 		(
 			not commander.pilot
@@ -11658,6 +11674,7 @@ function player_swaps_to_shuttle ( args )
 	-- perform refit
 	pp = player.pilot()
 	pp:setFuel(0)	-- don't start with free fuel
+    pp:setHealth(100, 100, 12)
 	pp:outfitRm( "all" )
 	pp:outfitRm( "cores" )
 	
