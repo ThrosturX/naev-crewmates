@@ -6915,7 +6915,9 @@ function enter()
 	else
 		print("enter reset mother")
 		mothership = player.ship()
-        commander.ghost = nil
+        if commander ~= nil then
+            commander.ghost = nil
+        end
         ghost_commander = nil
         print("ghost cleared")
 	end
@@ -9201,6 +9203,8 @@ You'll be charged for the parts immediately, but you won't be charged for the wo
 	if not edata.shuttle and mem.ship_interior.shuttle then
 		escort( fmt.f(_([[Tired of the old {ship} are we? That's fine, I can get us a replacement at the shipyard here. What would you like?]]), mem.ship_interior.shuttle) )
 	elseif edata.shuttle then
+        -- in case it's borked
+        print(edata.shuttle)
 		escort( fmt.f(_([[Tired of my flying around in my {ship} are you? That's fine, I can get myself a replacement at the shipyard here. What do you want me to fly?]]), edata.shuttle) )
 	else
 		escort( _([[Wait a minute, do we even have a shuttle in there? Well, it's definitely time for a replacement.]]) )

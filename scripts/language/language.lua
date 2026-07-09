@@ -1021,7 +1021,7 @@ language.getInsultingProperNoun = function ()
     params.adjective = pick_one(adjectives)
     params.adject2 = pick_one(adject2s)
     params.verb = pick_one(verbs)
-    local r = rnd.uniform()
+    local r = rnd.uniform(0,1)
     if r < 0.33 then
         return fmt.f("{adjective} {noun}", params)
     elseif r < 0.5 then

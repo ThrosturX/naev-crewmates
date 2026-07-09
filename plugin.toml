@@ -1,0 +1,10 @@
+identifier = "TXCrewmates"
+name = "Crewmate companions"
+author = "ThrosturX"
+version = "0.12.8"
+abstract = "Adds hireable crew to the game. Once hired, they live and breathe on your ship, can be promoted, have their own little personalities and engage in conversations between themselves."
+release_status = "development"
+tags = [ "casual", ]
+naev_version = ">= 0.13.0"
+depends = [ "joyride" ]
+source = { git = "https://github.com/ThrosturX/naev-crewmates.git" }
