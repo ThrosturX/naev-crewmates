@@ -159,7 +159,7 @@ nouns.facilities.cruiser = {
 
 -- nouns to describe some actor
 
-animals = {}
+local animals = {}
 animals.mammals = {}
 
 animals.mammals.domestic = {
@@ -278,7 +278,7 @@ animals.insects = {
 nouns.actors.animals = animals
 
 -- nouns to describe a person or person-like object
-people = {}
+local people = {}
 
 -- when we refer to someone who is a hero in a friendly manner
 -- or if we want a toy of a "hero" kind, it would be a <adjective> <hero> <toy> or something like that
@@ -820,12 +820,13 @@ language.verbs = verbs
 
 -- gets the plural of some noun
 language.getPlural = function ( noun )
+	assert(type(noun) == "string", "language.getPlural expects a string")
 	-- TODO (defer): implement this so that it can be translatable
 	-- which also means covering irregular plurals in English
 	
 	-- default regular: word has a plural ending
 	-- this is a placeholder
-	if not noun:sub(-1) == _("s") then
+	if noun:sub(-1) ~= _("s") then
 		return fmt.f("{noun}s", { noun = noun } )
 	end
 
@@ -1021,7 +1022,7 @@ language.getInsultingProperNoun = function ()
     params.adjective = pick_one(adjectives)
     params.adject2 = pick_one(adject2s)
     params.verb = pick_one(verbs)
-    local r = rnd.uniform(0,1)
+    local r = rnd.rnd()
     if r < 0.33 then
         return fmt.f("{adjective} {noun}", params)
     elseif r < 0.5 then

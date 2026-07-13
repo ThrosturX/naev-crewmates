@@ -1,0 +1,3652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<naev_save>
+  <version>
+    <naev>0.14.0-alpha.4+26-07-12-20.g1f5b5aa</naev>
+    <data>Sea of Darkness</data>
+  </version>
+  <last_played>1778804669</last_played>
+  <plugins>
+    <plugin id="joyride">Auxiliary Ship Bay</plugin>
+    <plugin id="TXCrewmates">Crewmate companions</plugin>
+  </plugins>
+  <diffs>
+    <diff>hypergates_3</diff>
+  </diffs>
+  <player name="Crewmates QA">
+    <credits>50000000</credits>
+    <chapter>1</chapter>
+    <mapOverlay>0</mapOverlay>
+    <radar_res>100.000000</radar_res>
+    <eq_outfitMode>0</eq_outfitMode>
+    <map_minimal>0</map_minimal>
+    <fleet_capacity>100</fleet_capacity>
+    <time remainder="54.759128" string="UST 603:3726.3569">30187263569054</time>
+    <location>Bolero</location>
+    <ship name="QA Carrier" model="Za'lek Hephaestus" favourite="1" deployed="0">
+      <acquired>Purpose-built carrier for repeatable Crewmates manual testing.</acquired>
+      <acquired_date>30187262871000</acquired_date>
+      <time_played>0.000000</time_played>
+      <dmg_done_shield>0.000000</dmg_done_shield>
+      <dmg_done_armour>0.000000</dmg_done_armour>
+      <dmg_taken_shield>0.000000</dmg_taken_shield>
+      <dmg_taken_armour>0.000000</dmg_taken_armour>
+      <jumped_times>0</jumped_times>
+      <landed_times>1</landed_times>
+      <death_counter>0</death_counter>
+      <ships_destroyed>
+        <Yacht>0</Yacht>
+        <Courier>0</Courier>
+        <Freighter>0</Freighter>
+        <Armoured_Transport>0</Armoured_Transport>
+        <Bulk_Freighter>0</Bulk_Freighter>
+        <Scout>0</Scout>
+        <Interceptor>0</Interceptor>
+        <Fighter>0</Fighter>
+        <Bomber>0</Bomber>
+        <Corvette>0</Corvette>
+        <Destroyer>0</Destroyer>
+        <Cruiser>0</Cruiser>
+        <Battleship>0</Battleship>
+        <Carrier>0</Carrier>
+      </ships_destroyed>
+      <fuel>2800.000000</fuel>
+      <outfits_intrinsic/>
+      <outfits_structure>
+        <outfit slot="0" slotname="engines">Unicorp Eagle 3000 Engine</outfit>
+        <outfit slot="1" slotname="engines_secondary">Unicorp Eagle 3000 Engine</outfit>
+        <outfit slot="2" slotname="hull">Unicorp D-58 Heavy Plating</outfit>
+        <outfit slot="3" slotname="hull_secondary">Unicorp D-58 Heavy Plating</outfit>
+      </outfits_structure>
+      <outfits_utility>
+        <outfit slot="0" slotname="systems">Unicorp PT-440 Core System</outfit>
+        <outfit slot="1" slotname="systems_secondary">Unicorp PT-440 Core System</outfit>
+      </outfits_utility>
+      <outfits_weapon>
+        <outfit slot="0">Empire Lancelot Bay</outfit>
+        <outfit slot="1">Empire Lancelot Bay</outfit>
+        <outfit slot="4">Sirius Fidelity Bay</outfit>
+        <outfit slot="5">Sirius Fidelity Bay</outfit>
+        <outfit slot="6">Auxiliary Ship Bay</outfit>
+      </outfits_weapon>
+      <commodities/>
+      <weaponsets autoweap="1" advweap="0" aim_lines="0">
+        <weaponset inrange="1" manual="0" volley="0" id="0"/>
+        <weaponset inrange="1" manual="0" volley="0" id="1"/>
+        <weaponset inrange="1" manual="0" volley="0" id="2"/>
+        <weaponset inrange="1" manual="0" volley="0" id="3"/>
+        <weaponset inrange="1" manual="0" volley="0" id="4"/>
+        <weaponset inrange="1" manual="0" volley="0" id="5"/>
+        <weaponset inrange="1" manual="0" volley="0" id="6"/>
+        <weaponset inrange="1" manual="0" volley="0" id="7"/>
+        <weaponset inrange="1" manual="0" volley="0" id="8"/>
+        <weaponset inrange="1" manual="0" volley="0" id="9"/>
+        <weaponset inrange="1" manual="0" volley="0" id="10"/>
+        <weaponset inrange="1" manual="0" volley="0" id="11"/>
+      </weaponsets>
+      <vars/>
+    </ship>
+    <ships/>
+    <guis>
+      <gui>brushed</gui>
+      <gui>slim</gui>
+      <gui>slimv2</gui>
+      <gui>legacy</gui>
+    </guis>
+    <outfits/>
+    <licenses/>
+    <inventory/>
+  </player>
+  <missions_done>
+    <done>Tutorial</done>
+  </missions_done>
+  <events_done>
+    <done>start_event</done>
+    <done>Chapter 1</done>
+  </events_done>
+  <escorts/>
+  <metadata>
+    <last_played>1778804669</last_played>
+    <date_created>1778804614</date_created>
+    <time_played>56.000000</time_played>
+    <dmg_done_shield>0.000000</dmg_done_shield>
+    <dmg_done_armour>0.000000</dmg_done_armour>
+    <dmg_taken_shield>0.000000</dmg_taken_shield>
+    <dmg_taken_armour>0.000000</dmg_taken_armour>
+    <jumped_times>0</jumped_times>
+    <landed_times>1</landed_times>
+    <death_counter>0</death_counter>
+    <ships_destroyed>
+      <Yacht>0</Yacht>
+      <Courier>0</Courier>
+      <Freighter>0</Freighter>
+      <Armoured_Transport>0</Armoured_Transport>
+      <Bulk_Freighter>0</Bulk_Freighter>
+      <Scout>0</Scout>
+      <Interceptor>0</Interceptor>
+      <Fighter>0</Fighter>
+      <Bomber>0</Bomber>
+      <Corvette>0</Corvette>
+      <Destroyer>0</Destroyer>
+      <Cruiser>0</Cruiser>
+      <Battleship>0</Battleship>
+      <Carrier>0</Carrier>
+    </ships_destroyed>
+  </metadata>
+  <temporary_cargo/>
+  <missions/>
+  <events/>
+  <news/>
+  <vars>
+    <var name="_fcap_dvaered" type="num">60.000000</var>
+    <var name="_fcap_empire" type="num">55.000000</var>
+    <var name="_fcap_frontier" type="num">30.000000</var>
+    <var name="_fcap_goddard" type="num">30.000000</var>
+    <var name="_fcap_orez" type="num">50.000000</var>
+    <var name="_fcap_pirate" type="num">56.000000</var>
+    <var name="_fcap_proteron" type="num">70.000000</var>
+    <var name="_fcap_sirius" type="num">70.000000</var>
+    <var name="_fcap_soromid" type="num">70.000000</var>
+    <var name="_fcap_thurion" type="num">70.000000</var>
+    <var name="_fcap_trader" type="num">30.000000</var>
+    <var name="_fcap_yetmer" type="num">50.000000</var>
+    <var name="_fcap_zalek" type="num">57.000000</var>
+    <var name="autonav_brake_pos" type="bool">0</var>
+    <var name="autonav_compr_max" type="num">50.000000</var>
+    <var name="autonav_compr_speed" type="num">5000.000000</var>
+    <var name="autonav_follow_jump" type="bool">0</var>
+    <var name="autonav_include_escorts" type="bool">1</var>
+    <var name="autonav_match_fleet" type="bool">1</var>
+    <var name="autonav_reset_dist" type="num">3000.000000</var>
+    <var name="autonav_reset_lockon" type="bool">1</var>
+    <var name="autonav_reset_shield" type="num">1.000000</var>
+    <var name="autonav_uselanes_jump" type="bool">1</var>
+    <var name="autonav_uselanes_spob" type="bool">1</var>
+    <var name="autonav_uselanes_thr" type="num">2.000000</var>
+    <var name="factionhit_hide" type="bool">0</var>
+    <var name="news_last_article" type="num">30187263569054.000000</var>
+    <var name="news_last_econ_article" type="num">30187263569054.000000</var>
+    <var name="shipai_name" type="str">AI</var>
+    <var name="tut_disable" type="bool">1</var>
+    <var name="vn_autoscroll" type="bool">1</var>
+    <var name="vn_nobounce" type="bool">0</var>
+    <var name="vn_textspeed" type="num">0.000000</var>
+    <var name="_crewmates_qa_fixture" type="num">1.000000</var>
+  </vars>
+  <factions>
+    <faction name="Black Lotus">
+      <standing>-20.000000</standing>
+    </faction>
+    <faction name="Dreamer Clan">
+      <standing>-10.000000</standing>
+    </faction>
+    <faction name="Dvaered">
+      <standing>1.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Empire">
+      <standing>1.000000</standing>
+      <known/>
+    </faction>
+    <faction name="FLF">
+      <standing>0.000000</standing>
+    </faction>
+    <faction name="Frontier">
+      <standing>3.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Goddard">
+      <standing>2.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Independent">
+      <standing>3.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Lost">
+      <standing>-100.000000</standing>
+    </faction>
+    <faction name="Marauder">
+      <standing>-50.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Nasin">
+      <standing>0.000000</standing>
+    </faction>
+    <faction name="O'rez">
+      <standing>1.000000</standing>
+    </faction>
+    <faction name="Pirate">
+      <standing>-20.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Proteron">
+      <standing>-50.000000</standing>
+    </faction>
+    <faction name="Raven Clan">
+      <standing>-20.000000</standing>
+    </faction>
+    <faction name="Sirius">
+      <standing>3.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Soromid">
+      <standing>0.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Thurion">
+      <standing>1.000000</standing>
+    </faction>
+    <faction name="Traders Society">
+      <standing>3.000000</standing>
+      <known/>
+    </faction>
+    <faction name="Wild Ones">
+      <standing>-40.000000</standing>
+    </faction>
+    <faction name="Yetmer">
+      <standing>1.000000</standing>
+    </faction>
+    <faction name="Za'lek">
+      <standing>2.000000</standing>
+      <known/>
+    </faction>
+  </factions>
+  <hooks/>
+  <space>
+    <known sys="Acheron">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Adraia">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Adran">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Aesir">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Aesria">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Aet">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Akodu">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Akra">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Allous">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Alpha Centauri">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Alsafi">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Altair">
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Alteris">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+    </known>
+    <known sys="Amaroq">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Amatiri">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Amlet">
+      <faction name="Yetmer">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="An'ku">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Anarbalis">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Andee">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Andres">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Aneel Azi">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Anger">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Anrique">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Antares">
+      <faction name="Thurion">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Antlejos">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Anubis Black Hole"/>
+    <known sys="Apez">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Apik">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Arandon">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Arcanis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Arcturus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Ariadus">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Arietis">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Armorhead">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Astana">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Atlantis">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Attaria">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Auger">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Awowa">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Babylon">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Baf">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Baitas">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Barnard's Star">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Basel">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Bastion">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Bedimann">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Beeklo">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Behar">
+      <faction name="FLF">0.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Blacin">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Blackwell">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Blunderbuss">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Bonanza">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Booster">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Borla">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Botarn">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Brendon">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Brimstone">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Brumerebus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Brumeria">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="C-00">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="C-14">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="C-28">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="C-43">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="C-59">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Capella">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Capricorn">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+    </known>
+    <known sys="Carnis Major">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Carnis Minor">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Carrza">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Castellan">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Cebus">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Cerberus">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Chloe">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Chraan">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Churchill">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Cleai">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Copernicus">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Corinth">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Coriolis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Corvus">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Crimson Gauntlet"/>
+    <known sys="Cygni">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Cygnus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Daan">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Goddard">2.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Dakron">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+    </known>
+    <known sys="Daled">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Damien">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Daravon">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Darkstone">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Defa">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Delta Pavonis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Delta Polaris" known="1">
+      <spob>Bolero</spob>
+      <spob>Delta Polaris I</spob>
+      <spob>Delta Polaris II</spob>
+      <spob>Delta Polaris VI</spob>
+      <spob>Falas</spob>
+      <jump>Antlejos</jump>
+      <jump>Jade</jump>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Dendria">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Deneb">
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Diadem">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Doeston">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Dohriabi">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Doowa">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Doranthex">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+    </known>
+    <known sys="Draconis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Draygar">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Druid">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Druss">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Dune">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Duros">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Dust">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Dvaer">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Effetey">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Eiderdown">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Eiger">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Eisenhorn">
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Ekkodu">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+    </known>
+    <known sys="Ekta">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Elixir">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Elza">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Eneguoz">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Eridani">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Esker">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+    </known>
+    <known sys="Euler">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Eye of Night">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Farizel">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Father's Pride">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Faust">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Felzen">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Fern">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Fertile Crescent"/>
+    <known sys="Feye">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Fidelis">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Firk">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Flok">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Flow">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Forlat">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Fortitude">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Fried">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Frolina">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Fulcrum">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Fury">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Gamel">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Gamma Polaris">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Gammacron">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Ganth">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Garten">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gewirn">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gilligan's Light">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gilligan's Memory">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gilligan's Tomb">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Ginger">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Gliese">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Gliese Minor">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Goddard">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Goddard">2.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gold">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Yetmer">1.000000</faction>
+      <faction name="O'rez">1.000000</faction>
+    </known>
+    <known sys="Gorman">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Gremlin">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Griffin">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Groombridge">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Gruz">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Guntesh">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Gutter">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Gyrios">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Hades">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Hadosh">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Haered">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Hakoi">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Haleb">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Halo">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Hargen">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Hasselt">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Hatter">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Haven">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+    </known>
+    <known sys="Hekaras">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Hephaestus">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Herakin">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Herculis">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Hideyoshi's Star">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Holly">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Hopa">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Hubfar">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Humdrum">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Hystera">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Ianella">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Infinity">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Ingot">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Iris">
+      <faction name="FLF">0.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Ivella">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Jackson">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Jade">
+      <jump>Delta Polaris</jump>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Jervis">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Jommel">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="K'tos">
+      <faction name="O'rez">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Kansas">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Karman">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+    </known>
+    <known sys="Katami">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Kelvos">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Kenvis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Khaas">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Kiwi">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Klantar">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Klintus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Klunzar">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Knave">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Kobopos">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Kohler">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Koit">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Koralis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Korifa">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Korma">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Kraft">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Kretogg">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Kruger">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Kruger's Pocket">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Ksher">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="O'rez">1.000000</faction>
+      <faction name="Yetmer">1.000000</faction>
+    </known>
+    <known sys="Kyo">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Lalande">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Lapis">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Lazuli">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Leporis">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Levo">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Limbo">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Logania">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Longbow">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Lynx">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Machea">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Majesteka">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Malebolge">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Marat">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Margarita">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Maron">
+      <faction name="Thurion">1.000000</faction>
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Mason">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+    </known>
+    <known sys="Massia">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Maus">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Mayla">
+      <faction name="O'rez">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Merisi">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Metsys">
+      <faction name="Thurion">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Mida">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Midoros">
+      <faction name="Thurion">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Millstone">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+    </known>
+    <known sys="Mirror">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Mizar">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Modus Manis">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Monogram">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Moor">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Moordra">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Muirat">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Mural">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Muran">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Myad">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="NGC-1001">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-10081">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-10180">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="NGC-10284">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-10452">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-10653">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-10789">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-10907">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-1098">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="NGC-11050">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-11231">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-11444"/>
+    <known sys="NGC-11718">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="NGC-11935">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="NGC-12056">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-12108">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-12261">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-12654">
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-127">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-12882">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-1292">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-1317"/>
+    <known sys="NGC-13322"/>
+    <known sys="NGC-13522">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-13564">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-13674">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-13747">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-13798">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-14337">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-14430">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="NGC-14479"/>
+    <known sys="NGC-14549">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-14676">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-1562">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-15670">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="NGC-18269"/>
+    <known sys="NGC-18451">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-1872">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-1931"/>
+    <known sys="NGC-20489">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-2175">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-2232">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="NGC-22375">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-23">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-2601">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-2948">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="NGC-2954">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-3219">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-3371">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-344">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-3858">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="NGC-4087"/>
+    <known sys="NGC-4131">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="NGC-4363">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-4746"/>
+    <known sys="NGC-4766">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-4771"/>
+    <known sys="NGC-5240">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="NGC-5362">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-5483">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-5838">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-5882">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-6057"/>
+    <known sys="NGC-6610">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-6901">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="NGC-7061"/>
+    <known sys="NGC-7078">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-728">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-7319">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="NGC-7402">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-7533">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="NGC-7784">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-7786">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="NGC-8040">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-8338">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-8468">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-9017">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="NGC-902">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-9415">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="NGC-9607">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-9654">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="NGC-9897">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Narousse">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Nartur">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Nasona">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Nava">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Neexi">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Neon">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="New Haven">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Newmarch">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Niger">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Nirtos">
+      <faction name="Lost">-100.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Nixon">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Norn">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Norpin">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Nougat">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Nunavut">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Oberon">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Octantis">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Octavian">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Ogat">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Olympus">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Opal">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Ophiuchi">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Oriantis">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+    </known>
+    <known sys="Orion">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Overture">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Oxuram">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="PSO">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Padonia">
+      <faction name="Lost">-100.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Palejos">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Palin">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Palovi">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Paradox">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Pas">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Pastor">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Pellmell">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Penn">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Peogas">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Percival">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Perhelion">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Peter">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Pike">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Pilatis">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Pisces Prime">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Point Zero">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Polack">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Polaris">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Poller">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Poltergeist">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Pontus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Porro">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Possum">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Procyon">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Protera">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Provectus Nova">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Goddard">2.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Proxima Centauri">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Pudas">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Pultatis">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Qellan">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Qex">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Qorel">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Quai">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Qulam">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Radix">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="O'rez">1.000000</faction>
+      <faction name="Yetmer">1.000000</faction>
+    </known>
+    <known sys="Raelid">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Ram">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Rauthia">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Regas">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Regulus">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Rei">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Reptile">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Rhu">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Rockbed">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Ross">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Rotide">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Ruadan">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="Ruttwi">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Ryder">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="SW-1"/>
+    <known sys="SW-10"/>
+    <known sys="SW-11"/>
+    <known sys="SW-12"/>
+    <known sys="SW-13"/>
+    <known sys="SW-14"/>
+    <known sys="SW-2"/>
+    <known sys="SW-3"/>
+    <known sys="SW-4"/>
+    <known sys="SW-5"/>
+    <known sys="SW-6"/>
+    <known sys="SW-7"/>
+    <known sys="SW-8"/>
+    <known sys="SW-9"/>
+    <known sys="Sagittarius">
+      <faction name="Lost">-100.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Sagittarius Prime">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Salvador">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Santoros">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sarcophagus">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sarrii">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Scarlet">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Scholz's Star">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Scorpius">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Seelie">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Seiben">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Seifer">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Senara">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Seport">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Seran">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Sergio Vix">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Severus">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Shakar">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sheffield">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Yetmer">1.000000</faction>
+      <faction name="O'rez">1.000000</faction>
+    </known>
+    <known sys="Shickhaw">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Shikima">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Shinnok">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sigur">
+      <faction name="FLF">0.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Sikh">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Sinensis">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="Sirou">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Slaccid">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sleuth">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sol">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Solene">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Sollav">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Somard">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sonas">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sorrow">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="South Bell">
+      <faction name="Thurion">1.000000</faction>
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Stained Soul">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Starlight End">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Stelman">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sten">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Stint">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Stone Table">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Straight Row">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Struve">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Su'nir"/>
+    <known sys="Suk">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Sultan">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Suna">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+    </known>
+    <known sys="Surano">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Sylph">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Symm">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Syndania">
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Taiomi">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Tandar">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Tarmak">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tarsus">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tartan">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Tasopa">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Tau Ceti">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tau Prime">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Taxumi">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Teegarden">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Telika">
+      <faction name="Proteron">-50.000000</faction>
+    </known>
+    <known sys="Teller">
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tempus">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Tepdania">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tepvin">
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Terminus">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+    </known>
+    <known sys="Test of Alacrity"/>
+    <known sys="Test of Devotion"/>
+    <known sys="Test of Enlightenment"/>
+    <known sys="Test of Purification"/>
+    <known sys="Test of Renewal"/>
+    <known sys="Theras">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Thirty Stars">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Thorndyke">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Tide">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Titus">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Toaxis">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Tobanna">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Tomas">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Torg">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tormulex">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Toros">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+    <known sys="Toxin">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Trask">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Treacle">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Triap">
+      <faction name="Frontier">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Trohem">
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Tuoladis">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Uhriabi">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Ulysses">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Undergate">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Unicorn">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Urbanus">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Urdads">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Uridhrion">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Urillian">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Ux">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Vadornla">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Valerie">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Valur Gem">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Van Maanen">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Vandal">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Vanir">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Vauban">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Vean">
+      <faction name="Thurion">1.000000</faction>
+    </known>
+    <known sys="Vedalus">
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Vega">
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Verex">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Veses">
+      <faction name="Lost">-100.000000</faction>
+    </known>
+    <known sys="Virgo">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Vlexon">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Volus">
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Voproid">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Vost">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Wahri">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+    </known>
+    <known sys="Waterhole">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="Goddard">2.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Westhaven">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Willow">
+      <faction name="Sirius">3.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Wochii">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Wolf">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Woreck">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Wunomi">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Xavier">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+    </known>
+    <known sys="Xeric">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Traders Society">3.000000</faction>
+    </known>
+    <known sys="Yarn">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Yetmer-O'rez Highspace">
+      <faction name="Yetmer">1.000000</faction>
+      <faction name="O'rez">1.000000</faction>
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+    </known>
+    <known sys="Za'lek">
+      <faction name="Za'lek">2.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Zacron">
+      <faction name="Dvaered">1.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Empire">1.000000</faction>
+      <faction name="FLF">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Zemur">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Zerantix">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Zied">
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Zintar">
+      <faction name="Soromid">0.000000</faction>
+      <faction name="Independent">3.000000</faction>
+    </known>
+    <known sys="Zurai">
+      <faction name="Independent">3.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+    </known>
+    <known sys="Zylex">
+      <faction name="Empire">1.000000</faction>
+      <faction name="Independent">3.000000</faction>
+      <faction name="Pirate">-20.000000</faction>
+      <faction name="Marauder">-50.000000</faction>
+      <faction name="Wild Ones">-40.000000</faction>
+      <faction name="Raven Clan">-20.000000</faction>
+      <faction name="Dreamer Clan">-10.000000</faction>
+      <faction name="Black Lotus">-20.000000</faction>
+    </known>
+  </space>
+  <economy>
+    <system name="Antlejos">
+      <spob name="Antlejos V">
+        <commodity name="Diamond" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="1.000000" sum2="1.000000" cnt="1" time="30187263569054"/>
+      </spob>
+    </system>
+    <system name="Delta Polaris">
+      <spob name="Benteen">
+        <commodity name="Diamond" sum="160.000000" sum2="25600.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="45.000000" sum2="2025.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="447.000000" sum2="199809.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="451.000000" sum2="203401.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="602.000000" sum2="362404.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="430.000000" sum2="184900.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="260.000000" sum2="67600.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="109.000000" sum2="11881.000000" cnt="1" time="30187263569054"/>
+      </spob>
+      <spob name="Bolero">
+        <commodity name="Diamond" sum="159.000000" sum2="25281.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="42.000000" sum2="1764.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="433.000000" sum2="187489.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="459.000000" sum2="210681.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="584.000000" sum2="341056.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="403.000000" sum2="162409.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="266.000000" sum2="70756.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="103.000000" sum2="10609.000000" cnt="1" time="30187263569054"/>
+      </spob>
+    </system>
+    <system name="Jade">
+      <spob name="Stormgard">
+        <commodity name="Diamond" sum="157.000000" sum2="24649.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="25.000000" sum2="625.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="317.000000" sum2="100489.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="427.000000" sum2="182329.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="435.000000" sum2="189225.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="242.000000" sum2="58564.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="272.000000" sum2="73984.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="56.000000" sum2="3136.000000" cnt="1" time="30187263569054"/>
+      </spob>
+    </system>
+    <system name="Shakar">
+      <spob name="Nova Shakar">
+        <commodity name="Diamond" sum="152.000000" sum2="23104.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="51.000000" sum2="2601.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="424.000000" sum2="179776.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="448.000000" sum2="200704.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="567.000000" sum2="321489.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="408.000000" sum2="166464.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="260.000000" sum2="67600.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="112.000000" sum2="12544.000000" cnt="1" time="30187263569054"/>
+      </spob>
+    </system>
+    <system name="Zemur">
+      <spob name="Ruin">
+        <commodity name="Diamond" sum="178.000000" sum2="31684.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="45.000000" sum2="2025.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="322.000000" sum2="103684.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="516.000000" sum2="266256.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="408.000000" sum2="166464.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="237.000000" sum2="56169.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="324.000000" sum2="104976.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="90.000000" sum2="8100.000000" cnt="1" time="30187263569054"/>
+      </spob>
+      <spob name="Turnpike Station">
+        <commodity name="Diamond" sum="178.000000" sum2="31684.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Food" sum="45.000000" sum2="2025.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Gold" sum="322.000000" sum2="103684.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Industrial Goods" sum="527.000000" sum2="277729.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Luxury Goods" sum="400.000000" sum2="160000.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Medicine" sum="236.000000" sum2="55696.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Ore" sum="324.000000" sum2="104976.000000" cnt="1" time="30187263569054"/>
+        <commodity name="Water" sum="90.000000" sum2="8100.000000" cnt="1" time="30187263569054"/>
+      </spob>
+    </system>
+  </economy>
+  <shiplog/>
+</naev_save>

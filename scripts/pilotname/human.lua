@@ -556,9 +556,9 @@ local function human ()
    end
 
    -- remove ugly duplicate letters
-   for found, replacement in pairs(ugly_duplicates) do
-	result = string.gsub( result, found, replacement )
-	firstname = string.gsub( firstname, found, replacement )
+   for _, replacement in ipairs(ugly_duplicates) do
+	result = string.gsub( result, replacement.found, replacement.replace )
+	firstname = string.gsub( firstname, replacement.found, replacement.replace )
 	end
 
    -- final safety check, give the human a generic gender neutral name

@@ -1,5 +1,23 @@
 # Naev Crewmates Plugin
 
+## Development
+
+The Naev event entrypoint is events/companions.lua; runtime behavior lives in
+scripts/crewmates/runtime.lua and its supporting modules. Persistent fields
+must be initialized and migrated through scripts/crewmates/state.lua. See
+MAINTAINERS.md for the refactoring boundaries and validation checklist.
+
+Run `make check` before launching Naev. It syntax-checks every Lua file and
+runs the small standalone test suite for modules that do not require the game
+runtime. In-game behavior still needs the smoke test documented in
+`MAINTAINERS.md`.
+
+A reusable `Crewmates QA` pilot is checked in under `tests/fixtures/pilots/`.
+Install a fresh copy without touching another pilot with
+`tests/install-qa-pilot.sh`; pass a Naev data directory as its optional argument
+when using an isolated test profile. Running it again replaces only the
+existing `Crewmates QA` pilot.
+
 This plugin provides the necessary files to add crewmates to Naev.
 
 Simply walk into a bar, hire someone as crew and enjoy the chaos.

@@ -1,39 +1,24 @@
 local fmt = require "format"
 local lang = require "language.language"
+local util = require "crewmates.util"
 
 -- NOT READY!!
 
 
 -- creates a copy of t1 and t2 joined together
 local function join_tables(t1, t2)
-	local copy = {}
-	for _i, v in ipairs(t1) do
-        table.insert(copy, v)
-    end
-    for _i, v in ipairs(t2) do
-        table.insert(copy, v)
-    end
-
-    return copy
+	return util.join_arrays(t1, t2)
 end
 
 
 -- pick a random item from the collection
 local function pick_one(target)
-    local r = rnd.rnd(1, #target)
-    return target[r]
+	return util.pick_one(target)
 end
 
 -- pick a random key from a mapping
 local function pick_key(mapping)
-    local keys = {}
-    for key, _value in pairs(mapping) do
-        table.insert(keys, key)
-    end
-
-    local chosen_key = pick_one(keys)
-
-    return chosen_key
+	return util.pick_key(mapping)
 end
 
 local function getSpaceThing()
