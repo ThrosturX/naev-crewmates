@@ -26,6 +26,18 @@ host.rnd = {
    twosigma = function() return 0 end,
    threesigma = function() return 0 end,
 }
+local naev_cache = {}
+local triggered_event
+local event_saved
+host.evt = {
+   save = function(value) event_saved = value end,
+}
+host.naev = {
+   cache = function() return naev_cache end,
+   trigger = function(name, payload)
+      triggered_event = { name = name, payload = payload }
+   end,
+}
 
 local object
 object = setmetatable({}, {
@@ -39,6 +51,7 @@ object = setmetatable({}, {
       return function() return object end
    end,
 })
+object.outfitsList = function() return {} end
 
 host.player = {
    name = function() return 'Test Captain' end,
@@ -52,10 +65,21 @@ host.var = {
 }
 host.ship = {
    get = function() return object end,
+   getAll = function() return { object } end,
+}
+host.outfit = {
+   getAll = function() return { object } end,
+}
+host.spob = {
+   getAll = function() return {} end,
+}
+host.faction = {
+   get = function(name) return name end,
 }
 local shiplog_creates = 0
 host.shiplog = {
    create = function() shiplog_creates = shiplog_creates + 1 end,
+   append = function() end,
 }
 host.hook = setmetatable({
    rm = function() end,
@@ -108,6 +132,7 @@ package.preload.joyride = function() return {} end
 local runtime = require 'crewmates.runtime'
 local context = runtime.registry.module('context')
 local random_content = runtime.registry.module('content.random')
+local crew_factory = runtime.registry.module('crew_factory')
 
 check(type(host.create) == 'function', 'Naev create callback must be installed')
 check(type(host.startCommandDiscussion) == 'function', 'named hook callbacks must be installed')
@@ -115,12 +140,73 @@ check(host.pick_one == nil, 'ordinary helpers must not leak into the host enviro
 check(host.getCommander == nil, 'domain functions must not leak into the host environment')
 check(context.pick_one({ 42 }) == 42, 'module APIs remain callable')
 check(random_content.getSpaceThing() ~= nil, 'declared cross-module dependencies resolve')
+local isolated_backstory = crew_factory.generateBackstory {
+   typetitle = 'Commander', faction = 'Independent', skill = 'First Officer',
+}
+check(type(isolated_backstory) == 'table' and isolated_backstory.origin ~= nil,
+   'commander backstories survive systems with no faction spob candidates')
 
 host.create()
 check(type(context.npcs) == 'table', 'shared module slots propagate explicit mutations')
 check(shiplog_creates == 1, 'event startup creates its ship log before appending')
 context.playMoney()
 check(money_sounds == 1, 'money cues use Naev mission sound helpers')
+
+package.loaded['crewmates.api'] = nil
+local public_api = require 'crewmates.api'
+check(public_api.is_ready(),
+   'public API provider survives a separate consumer module environment')
+local alpaca = { nameRaw = function() return 'Alpaca' end }
+local commander = {
+   name = 'Nomad Commander', firstname = 'Nomad', skill = 'First Officer',
+   typetitle = 'Commander', xp = 10, satisfaction = 2,
+   shuttle = { ship = alpaca },
+   hook = { func = 'command' },
+}
+host.mem.companions[#host.mem.companions + 1] = commander
+local nomad_profile = { client = 'nomad', landable = true }
+host.player.isLanded = function() return false end
+check(public_api.ensure_commander('nomad', {
+   shuttle_profile = nomad_profile,
+}) == commander,
+   'public API returns an existing eligible commander')
+check(event_saved == true,
+   'external commander requirements make the Crewmates event persistent')
+check(type(public_api.launch_commander_shuttle) == 'function',
+   'public API exposes command shuttle launch')
+host.player.isLanded = function() return true end
+check(triggered_event and triggered_event.name == 'crewmates_commander_ready'
+   and triggered_event.payload.client == 'nomad',
+   'external registration requests activation through the Crewmates event')
+local selected_profile, selected_client = runtime.registry.module(
+   'integration').getExternalShuttleProfile(commander)
+check(selected_profile == nomad_profile and selected_client == 'nomad',
+   'commander requirements retain their selected Joyride profile')
+check(public_api.get_commander('nomad') == commander,
+   'public API exposes the commander selected for mothership control')
+check(public_api.get_commander_shuttle('nomad') == alpaca,
+   'public API exposes the guaranteed commander Alpaca')
+local dismissible, denial = public_api.can_dismiss(commander)
+check(not dismissible and type(denial) == 'string',
+   'public API protects the last registered commander')
+local replacement = {
+   name = 'Nomad Commander', typetitle = 'Commander', xp = 8,
+   shuttle = { ship = alpaca },
+}
+check(public_api.can_dismiss(commander, replacement),
+   'public API accepts an eligible atomic replacement')
+local mothership_pilot = {}
+check(public_api.attach_mothership('nomad', mothership_pilot) == commander
+   and commander.pilot == mothership_pilot,
+   'public API attaches the commander to an external mothership')
+public_api.release_mothership('nomad', mothership_pilot)
+check(commander.pilot == nil, 'public API releases the external mothership')
+check(public_api.replace_commander('nomad', replacement) == replacement,
+   'public API atomically selects an eligible replacement')
+check(#host.mem.companions == 1 and host.mem.companions[1] == replacement,
+   'atomic replacement removes only the incumbent, even when names match')
+check(public_api.get_commander('nomad') == replacement,
+   'public API exposes the replacement after the atomic change')
 
 local providers = runtime.registry.providers()
 check(providers.startCommandDiscussion == 'management_discussions', 'providers are explicit')

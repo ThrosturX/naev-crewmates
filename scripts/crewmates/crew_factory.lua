@@ -15,6 +15,14 @@ function getSpobForFaction(faction)
 	return "my home planet"
 end
 
+local function getRandomSpob()
+	local places = spob.getAll()
+	if #places <= 0 then
+		return _("somewhere far away")
+	end
+	return pick_one(places)
+end
+
 -- generates a backstory for an incomplete companion
 -- requires the typetitle, faction and skill fields to be set
 -- could use a lot of love :)
@@ -118,7 +126,7 @@ function generateBackstory(cdata)
 				_("a bad place"),
 				_("nowhere"),
 				"Janus Station",
-				spob.get(true), -- a completely random spob! Hah!
+				getRandomSpob(),
 				_ "Kramer",
 				_("Earth"),
 				_("the future"),
@@ -153,11 +161,16 @@ function generateBackstory(cdata)
 			),
 			fmt.f(
 				_("I used to work on a {ship} near {place}."),
-				{ship = getRandomShip(), place = spob.get(faction.get("Empire"), faction.get("Za'lek"))}
+				{
+					ship = getRandomShip(),
+					place = getSpobForFaction(pick_one({
+						faction.get("Empire"), faction.get("Za'lek")
+					})),
+				}
 			),
 			fmt.f(
 				_("One of my previous ships had a regular tour of {place}."),
-				{place = spob.get(faction.get("Soromid"))}
+				{place = getSpobForFaction(faction.get("Soromid"))}
 			),
 			fmt.f(_("My last ship, the {name}, was a {coffin}."), {name = lang.getMadeUpName(), coffin = getSpaceThing()}),
 			fmt.f(_("My last captain named his ship the {shipname}. What an idiot."), {shipname = lang.getMadeUpName()}),
@@ -199,7 +212,7 @@ function generateBackstory(cdata)
 			_(
 				"I have a large scar on my back. I got it in an altercation between a mighty warlord on {place} due to a misunderstanding."
 			),
-			{place = spob.get(faction.get("Dvaered"))}
+			{place = getSpobForFaction(faction.get("Dvaered"))}
 		),
 		fmt.f(
 			_(
@@ -207,7 +220,7 @@ function generateBackstory(cdata)
 			),
 			{
 				person = pick_one({_("woman"), _("youngster"), _("acrobat"), _("man"), _("warrior")}),
-				place = spob.get(faction.get("Dvaered"))
+				place = getSpobForFaction(faction.get("Dvaered"))
 			}
 		),
 		fmt.f(
@@ -216,7 +229,7 @@ function generateBackstory(cdata)
 				person = pick_one(
 					{_("drone"), _("robotic guard"), _("manual firearm"), _("fictional character"), _("badass")}
 				),
-				place = spob.get(faction.get("Za'lek"))
+				place = getSpobForFaction(faction.get("Za'lek"))
 			}
 		),
 		_("I lived on Kramer for over a year. I'll save you the jealousy and spare you the details."),
@@ -224,8 +237,11 @@ function generateBackstory(cdata)
 		_(
 			"I killed a man with my bare hands, it was intense. It was me or him. I was obviously outmatched, but I got lucky."
 		),
-		_(
-			"I was once a split second from getting blasted into bits by an armed guard near {place} when a masked stranger appeared out of nowhere and swapped out his plasma rifle with an umbrella! Yeah, I didn't believe it when it happened right in front of my eyes either."
+		fmt.f(
+			_(
+				"I was once a split second from getting blasted into bits by an armed guard near {place} when a masked stranger appeared out of nowhere and swapped out his plasma rifle with an umbrella! Yeah, I didn't believe it when it happened right in front of my eyes either."
+			),
+			{place = getSpobForFaction(faction.get("Dvaered"))}
 		),
 		_(
 			"Don't tell anyone I told you this, but I once managed to fool a bounty hunter by masking my Quicksilver as a Kestrel. To this day I can't belive he just trusted his sensors and didn't notice the stark differences between a Quicksilver and a Kestrel through the optical interface. Not to mention the difference in size!"
@@ -545,10 +561,18 @@ end
 --	helper to fetch the max crew even if we aren't on our mothership
 function getMaxCrew()
 	local max_crew = player.pilot():stats().crew
-	if mothership and mothership ~= player.ship() then
+	local mothership_name = naev.cache().player_mothership or mothership
+	if mothership_name and mothership_name ~= player.ship() then
 		local commander = getCommander()
 		if commander and commander.pilot and commander.pilot:exists() then
 			max_crew = commander.pilot:stats().crew
+		else
+			for _, owned_ship in ipairs(player.ships()) do
+				if owned_ship.name == mothership_name then
+					max_crew = owned_ship.ship:shipstat("crew")
+					break
+				end
+			end
 		end
 	end
 	return max_crew
@@ -793,7 +817,12 @@ end
 function createGenericCrewmate(fac)
 	fac = fac or faction.get("Independent")
 	local portrait_arg = fac
-	local pf = spob.cur():faction()
+	-- External commander clients can require a crewmate while the player is in
+	-- space, where there is no current spob whose faction could be inspected.
+	local pf = fac
+	if player.isLanded() then
+		pf = spob.cur():faction()
+	end
 	local lastname, firstname = pilotname.human()
 	if pir.factionIsPirate(pf) then
 		fac = faction.get("Pirate")
@@ -957,7 +986,8 @@ function createCommandManagerComponent()
 			{made_up = lang.getMadeUpName()}
 		),
 		_("I've been talking with some of the crew, they like the available fruit."),
-		fmt.f(_("Did I tell you about the creature from {place}?"), {place = spob.get(faction.get("Soromid"))}),
+		fmt.f(_("Did I tell you about the creature from {place}?"),
+			{place = getSpobForFaction(faction.get("Soromid"))}),
 		_("I had to scold some of the crew earlier, I'll spare you the details, it's no big deal."),
 		_("I feel like we are on a winning streak."),
 		_("I feel like we are on a lucky streak."),

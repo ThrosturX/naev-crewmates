@@ -894,7 +894,15 @@ function crewmate_barConversation(edata, npc_id)
 
 		-- adjust the chatter trying to push it down
 		edata.chatter = math.min(edata.chatter, math.max(0.16, edata.chatter - 0.1 - 0.1 * rnd.threesigma()))
-	elseif n == 4 and vntk.yesno("", fmt.f(_("Are you sure you want to {fire_label} {name}? This cannot be undone."), { fire_label = fire_label:lower(), name = edata.name } )) then
+	elseif n == 4 then
+		local allowed, denial = can_terminate_crew(edata)
+		if not allowed then
+			vntk.msg(_("Required commander"), denial)
+			return
+		end
+		if not vntk.yesno("", fmt.f(_("Are you sure you want to {fire_label} {name}? This cannot be undone."), { fire_label = fire_label:lower(), name = edata.name } )) then
+			return
+		end
 		local liked = getTopics(edata).liked
 		
 		-- reply to the captain or storm off, depending on whether we know violence, have friends, or neither

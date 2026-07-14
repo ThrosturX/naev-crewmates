@@ -163,7 +163,7 @@ function engineer_armour(engineer)
 		end
 		local message = fmt.f(_("Your engineer, {name}, was lost in space combat while maintaining hull integrity. As a final valiant act of heroism, {bonus:.0f} armor was repaired in a massive power surge."), engineer)
 		vntk.msg(_("Heroic Sacrifice"), message)
-		terminate_crew(engineer, message)
+		terminate_crew(engineer, message, { force = true })
 		SHIP_ENGINEERS = {} -- someone died, let's not do the bookkeeping about it now though
 		return -- no new hook
 	elseif (armour <= 10 and pp:energy() > 20) then

@@ -69,7 +69,9 @@ function state.reset_runtime_hooks(mem)
    mem.hail_hook = nil
    mem.joyride_spawn_hook = nil
    mem.joyride_end_hook = nil
+   mem.joyride_return_hook = nil
    mem.crewmates_joyride = nil
+   mem.crewmates_joyride_client = nil
 end
 
 return state

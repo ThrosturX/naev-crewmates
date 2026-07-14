@@ -5,12 +5,13 @@ function lifecycle.disband(mem, crewmember, reason, player, logidstr)
       + crewmember.xp * player.pilot():ship():size() * 0.1
 
    for index, crew in ipairs(mem.companions) do
-      if crewmember.name == crew.name then
+      if crewmember == crew then
          if crewmember.hook then
             hook.rm(crewmember.hook.hook)
          end
          mem.companions[index] = mem.companions[#mem.companions]
          mem.companions[#mem.companions] = nil
+         break
       end
    end
 

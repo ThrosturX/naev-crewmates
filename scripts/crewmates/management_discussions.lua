@@ -184,22 +184,28 @@ function startCommandDiscussion()
 						or string.find(spoken, _("airlock"))
 						)
 					then
-						local sacrificed_xp = math.max(1, worker.xp - worker.satisfaction) * rnd.rnd()
-						-- the captain wants to throw this person out of the airlock
-						terminate_crew(worker, fmt.f(_("You ordered {title} {officer} to throw {worker} out of the airlock in {system}."), { officer = officer.name, title = officer.typetitle, worker = worker.name, system = system.cur() }))
-						-- recalculate crew roster using takeoff logic
-						takeoff()
-						der.sfxUnboard()
-						-- everyone should get some xp or something for witnessing the sacrifice
-						for _j, witness in ipairs(mem.companions) do
-							local xp_bonus = rnd.rnd() + rnd.sigma() * 0.05 + sacrificed_xp * rnd.rnd()
-							witness.xp = math.min(99, witness.xp + xp_bonus)
-							-- TODO: create sacrifice memory :)
+						local allowed, denial = can_terminate_crew(worker)
+						if not allowed then
+							message = denial
+							vn.jump("say_end")
+						else
+							local sacrificed_xp = math.max(1, worker.xp - worker.satisfaction) * rnd.rnd()
+							-- the captain wants to throw this person out of the airlock
+							terminate_crew(worker, fmt.f(_("You ordered {title} {officer} to throw {worker} out of the airlock in {system}."), { officer = officer.name, title = officer.typetitle, worker = worker.name, system = system.cur() }))
+							-- recalculate crew roster using takeoff logic
+							takeoff()
+							der.sfxUnboard()
+							-- everyone should get some xp or something for witnessing the sacrifice
+							for _j, witness in ipairs(mem.companions) do
+								local xp_bonus = rnd.rnd() + rnd.sigma() * 0.05 + sacrificed_xp * rnd.rnd()
+								witness.xp = math.min(99, witness.xp + xp_bonus)
+								-- TODO: create sacrifice memory :)
+							end
+							local executioner = getCrewmateOnboard() or officer
+							executioner.xp = executioner.xp + 2
+							executioner.satisfaction = executioner.satisfaction - 1
+							vn.jump("end")
 						end
-						local executioner = getCrewmateOnboard() or officer
-						executioner.xp = executioner.xp + 2
-						executioner.satisfaction = executioner.satisfaction - 1
-						vn.jump("end")
 					elseif string.find(spoken, _("commend")) then
 						-- the captain wants to boost this person's xp and satisfaction
 						player.pay(-management.cost)

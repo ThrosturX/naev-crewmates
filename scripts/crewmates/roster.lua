@@ -41,15 +41,32 @@ function roster.find_type(mem, title, count_away, commander_title, shuttle_title
    end
 end
 
-function roster.calculate_bay_strength(mem, cargo_workers, player)
+local function outfit_bay_strength(player)
    local bay_strength = 0
    for _, outfit in ipairs(player.pilot():outfitsList()) do
-      if string.find(outfit:nameRaw(), "Bay") then
+      -- External carrier plugins can install a passive structural bay instead
+      -- of a launchable fighter bay. This tag expresses the same maximum Naev
+      -- ship size in Crewmates' existing three-strength-points-per-size scale.
+      if outfit:tags().crewmates_bay_size_2 then
+         bay_strength = bay_strength + 6
+      elseif string.find(outfit:nameRaw(), "Bay") then
          bay_strength = bay_strength + 2
       elseif string.find(outfit:nameRaw(), "Dock") then
          bay_strength = bay_strength + 1
       end
    end
+   return bay_strength
+end
+
+function roster.ensure_bay_strength(mem, player)
+   mem.ship_interior.bay_strength = math.max(
+      mem.ship_interior.bay_strength or 0,
+      outfit_bay_strength(player)
+   )
+end
+
+function roster.calculate_bay_strength(mem, cargo_workers, player)
+   local bay_strength = outfit_bay_strength(player)
 
    if bay_strength > 0 then
       mem.ship_interior.bay_strength = bay_strength + math.min(3.75, 0.34 * cargo_workers)

@@ -70,9 +70,39 @@ equal(docking.range({ xp = 100, satisfaction = 10, bonus = 50 }), 450,
    'docking skill bonus is capped deterministically')
 equal(roster.find_with_title(crew_mem, 'commander', true).typetitle, 'Commander', 'away crew can be included')
 
+local hiring = require 'crewmates.hiring'
+local incumbent = { name = 'Old Commander' }
+local candidate = { name = 'New Commander' }
+local confirmations = 0
+local selected, allowed = hiring.select_replacement(nil, incumbent, candidate,
+   function(old, new)
+      confirmations = confirmations + 1
+      return old == incumbent and new == candidate
+   end)
+equal(selected, incumbent, 'accepted replacements select the incumbent')
+equal(allowed, true, 'accepted replacements allow hiring to continue')
+local declined, declined_allowed = hiring.select_replacement(nil, incumbent, candidate,
+   function() return false end)
+equal(declined, nil, 'declined replacements leave the incumbent unselected')
+equal(declined_allowed, false, 'declined replacements stop hiring')
+selected, allowed = hiring.select_replacement(selected, incumbent, candidate,
+   function() error('the same replacement must not be confirmed twice') end)
+equal(allowed, true, 'one incumbent can satisfy overlapping hiring limits')
+local other = { name = 'Other Commander' }
+selected, allowed = hiring.select_replacement(selected, other, candidate,
+   function() error('a second incumbent must not be offered') end)
+equal(allowed, false, 'one hire cannot silently replace multiple crewmates')
+equal(confirmations, 1, 'replacement confirmation is shown once')
+
 local outfits = {
-   { nameRaw = function() return 'Fighter Bay' end },
-   { nameRaw = function() return 'Docking Clamp' end },
+   {
+      nameRaw = function() return 'Fighter Bay' end,
+      tags = function() return {} end,
+   },
+   {
+      nameRaw = function() return 'Docking Clamp' end,
+      tags = function() return {} end,
+   },
 }
 local player = {
    pilot = function()
@@ -81,5 +111,17 @@ local player = {
 }
 roster.calculate_bay_strength(crew_mem, 3, player)
 equal(crew_mem.ship_interior.bay_strength, 4.02, 'bay strength includes cargo workers')
+
+outfits = {{
+   nameRaw = function() return 'Nomad Command Bay' end,
+   tags = function() return { crewmates_bay_size_2 = true } end,
+}}
+roster.calculate_bay_strength(crew_mem, 0, player)
+equal(crew_mem.ship_interior.bay_strength, 6,
+   'tagged structural command bays support ships through Naev size 2')
+crew_mem.ship_interior.bay_strength = 0
+roster.ensure_bay_strength(crew_mem, player)
+equal(crew_mem.ship_interior.bay_strength, 6,
+   'late external commander registration refreshes structural bay capacity')
 
 print(('ok - %d module assertions'):format(assertions))

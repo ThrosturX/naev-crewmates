@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin name="Crewmate companions">
     <author>ThrosturX</author>
-    <version>0.12.10</version>
+    <version>0.13.0</version>
     <compatibility>0\.(13|14)\..*</compatibility>
     <priority>1</priority>
     <description>Adds hireable crew to the game. Once hired, they live and breathe on your ship, can be promoted, have their own little personalities and engage in conversations between themselves.</description>

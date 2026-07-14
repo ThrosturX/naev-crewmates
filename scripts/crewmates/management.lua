@@ -12,15 +12,27 @@ function disband_crew(crewmember, reason)
 	crew_lifecycle.disband(mem, crewmember, reason, player, logidstr)
 end
 
+function can_terminate_crew(crewmember, replacement)
+	return canDismissRequiredCrew(crewmember, replacement)
+end
+
 -- delete the crew member permanently
-function terminate_crew(crewmember, reason)
+function terminate_crew(crewmember, reason, options)
+	options = options or {}
+	if not options.force then
+		local allowed, denial = can_terminate_crew(crewmember, options.replacement)
+		if not allowed then
+			return false, denial
+		end
+	end
 	crew_lifecycle.terminate(mem, npcs, crewmember, reason, player, logidstr)
+	return true
 end
 
 -- method to wrap terminate_crew for hooking death
 function terminate_crew_death( dead, killer, args)
 	print("terminate_crew_death " .. tostring(dead) .. tostring(killer) .. tostring(args.crewman.name))
-	return terminate_crew(args.crewman, args.reason)
+	return terminate_crew(args.crewman, args.reason, { force = true })
 end
 
 -- generates a message that discusses some random interest of <crewmate>
@@ -722,9 +734,12 @@ end
 
 return contract.capture {
 	name = "management",
-	requires = { "context", "content.character", "memory", "conversation_runtime" },
+	requires = {
+		"context", "content.character", "memory", "conversation_runtime",
+		"integration",
+	},
 	exports = {
-		"disband_crew", "terminate_crew", "terminate_crew_death",
+		"disband_crew", "can_terminate_crew", "terminate_crew", "terminate_crew_death",
 		"discussRandomTopic", "startDiscussion", "doSpecialManagementFunc",
 		"convertFoodToFruit", "findCrewWithSkill", "findCrewWithTitle",
 		"findManagerOfType", "findCrewOfType", "listCrewReport", "salaryReport",

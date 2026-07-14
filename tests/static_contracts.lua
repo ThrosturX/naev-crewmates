@@ -6,6 +6,7 @@ local files = {
    'scripts/crewmates/conversation_runtime.lua',
    'scripts/crewmates/crew_factory.lua',
    'scripts/crewmates/crew_factory_officers.lua',
+   'scripts/crewmates/integration.lua',
    'scripts/crewmates/crew_factory_npcs.lua',
    'scripts/crewmates/simulation.lua',
    'scripts/crewmates/management.lua',
@@ -37,6 +38,16 @@ assert(away_source:find('cargoAdd( cargo.c, cargo.q )', 1, true),
 local context_source = read('scripts/crewmates/context.lua')
 assert(not context_source:find('snd/sounds/jingles/money', 1, true),
    'money sounds must use Naev helpers instead of asset paths')
+
+local factory_source = read('scripts/crewmates/crew_factory.lua')
+assert(not factory_source:find('spob.get(faction.get', 1, true),
+   'backstory origins must use the nil-safe faction spob lookup')
+assert(not factory_source:find('spob.get(', 1, true),
+   'backstory generation must never construct nullable spob handles')
+
+local runtime_source = read('scripts/crewmates/runtime.lua')
+assert(runtime_source:find('shuttle_manager = commander', 1, true),
+   'public command launch must persist loadouts on the registered commander')
 
 for _, path in ipairs(files) do
    local source = read(path)

@@ -5,6 +5,51 @@ local vn = require "vn"
 local lang = require "language.language"
 local contract = require "crewmates.module_contract"
 local docking = require "crewmates.docking"
+local hiring = require "crewmates.hiring"
+
+local function select_replacement(selected, incumbent, candidate)
+	return hiring.select_replacement(selected, incumbent, candidate, function(current, replacement)
+		return vntk.yesno(
+			_("Replace crew member?"),
+			fmt.f(
+				_("Your crew already includes {current_skill} {current_title} {current_name}. Replace {current_name} with {candidate_skill} {candidate_title} {candidate_name}?"),
+				{
+					current_skill = current.skill,
+					current_title = current.typetitle,
+					current_name = current.name,
+					candidate_skill = replacement.skill,
+					candidate_title = replacement.typetitle,
+					candidate_name = replacement.name,
+				}
+			)
+		)
+	end)
+end
+
+local function enlist_crew(incumbent, candidate)
+	mem.companions[#mem.companions + 1] = candidate
+	if not incumbent then
+		return true
+	end
+	local replaced, denial = terminate_crew(
+		incumbent,
+		fmt.f(
+			_("You replaced '{old_name}' with '{new_name}'."),
+			{ old_name = incumbent.name, new_name = candidate.name }
+		),
+		{ replacement = candidate }
+	)
+	if replaced then
+		return true
+	end
+	for index, crewmember in ipairs(mem.companions) do
+		if crewmember == candidate then
+			table.remove(mem.companions, index)
+			break
+		end
+	end
+	return false, denial
+end
 
 function approachCompanion(npc_id)
 	local edata = npcs[npc_id]
@@ -21,6 +66,7 @@ end
 -- Approaching a completely generic crewmate
 function approachGenericCrewmate(npc_id)
 	local pdata = npcs[npc_id]
+	local replacement
 	if pdata == nil then
 		evt.npcRm(npc_id)
 		return
@@ -39,17 +85,21 @@ function approachGenericCrewmate(npc_id)
 	if pdata.manager and not string.find(pdata.manager.type:lower(), _("Science"):lower()) then
 		for _i, pers in ipairs(mem.companions) do
 			if
-				pers.manager
+				pers ~= replacement
+				and pers.manager
 				and pers.manager.type == pdata.manager.type
 				and not string.find(pers.skill, _("Officer"))
 				and not string.find(pers.manager.type, _("Command"))
 			then
-				-- TODO : generate a rejection
-				vntk.msg(
-					_("No thanks"),
-					_("You look like you're already fairly well staffed. I'll find another ship that needs me.")
-				)
-				return
+				local allowed
+				replacement, allowed = select_replacement(replacement, pers, pdata)
+				if not allowed then
+					vntk.msg(
+						_("No thanks"),
+						_("You look like you're already fairly well staffed. I'll find another ship that needs me.")
+					)
+					return
+				end
 			end
 		end
 	end
@@ -58,16 +108,20 @@ function approachGenericCrewmate(npc_id)
 		for _i, pers in ipairs(mem.companions) do
 			-- if we have a shuttle, we won't join unless we are an officer and the ship doesn't have a smuggler
 			if
-				pers.shuttle
+				pers ~= replacement
+				and pers.shuttle
 				and (not string.find(pdata.skill, _("Officer")) or pers.skill == _("Smuggler"))	-- 2. but not the officer crew
 				and not (pdata.skill == _("Smuggler") and pers.skill == _("Pirate Leader"))		-- 1. let the smuggler join pirate crew
 			then
-				-- TODO : generate a rejection
-				vntk.msg(
-					_("No thanks"),
-					_("It looks like you already have someone else calling dibs on any spare space in your docking bays. I don't want to step on anyone's feet.")
-				)
-				return
+				local allowed
+				replacement, allowed = select_replacement(replacement, pers, pdata)
+				if not allowed then
+					vntk.msg(
+						_("No thanks"),
+						_("It looks like you already have someone else calling dibs on any spare space in your docking bays. I don't want to step on anyone's feet.")
+					)
+					return
+				end
 			end
 		end
 		-- check if the ship has a shuttle that we can use
@@ -79,15 +133,16 @@ function approachGenericCrewmate(npc_id)
 
 	-- check if this crew member has a typetitle that is limited
 	for ttt, lll in pairs(SHIP_CREW_LIMITS) do
-	local count = 0
+		local count = 0
+		local counted = {}
 	
 		print(fmt.f("HIRE Limit {k:16s} is\t{v}", {k=ttt, v=lll}))
 		
 		if ttt == pdata.typetitle or ttt == pdata.skill then
 			for _i, crewmate in ipairs(mem.companions) do
-				if 
-					crewmate.typetitle == ttt
-					or crewmate.skill == ttt
+				if
+					crewmate ~= replacement
+					and (crewmate.typetitle == ttt or crewmate.skill == ttt)
 				then
 					-- check if it's the same skill of same type (not allowed unless we are "Crew")
 					if
@@ -97,23 +152,28 @@ function approachGenericCrewmate(npc_id)
 						and not (crewmate.manager and crewmate.manager.type == _("Science")) -- don't count scientists either
 					then
 						print("found opposing crewmate " .. crewmate.name)
-						vntk.msg(
-							_("No thanks"),
-							fmt.f(_("How many {skill} {typetitle}s do you think you need? If you think you need more than just the one, then I don't think I want to be anywhere near your ship."), pdata )
-						)
-						return
+						local allowed
+						replacement, allowed = select_replacement(replacement, crewmate, pdata)
+						if not allowed then
+							vntk.msg(
+								_("No thanks"),
+								fmt.f(_("How many {skill} {typetitle}s do you think you need? If you think you need more than just the one, then I don't think I want to be anywhere near your ship."), pdata )
+							)
+							return
+						end
 					end
 					-- only count same skills or same titles
-					if (
+					if crewmate ~= replacement and ((
 							crewmate.skill == ttt
 							and pdata.skill == ttt
 						) or (
 							crewmate.typetitle == ttt
 							and pdata.typetitle == ttt
-						)
+						))
 					then
 						print("counting opposing crewmate " .. crewmate.name .. " as a " .. ttt)
 						count = count + 1
+						counted[#counted + 1] = crewmate
 					end
 				end
 			end
@@ -127,21 +187,27 @@ function approachGenericCrewmate(npc_id)
 				return
 			end
 			if count >= lll then
-				pdata.chosentitle = ttt
-				pdata.limit = lll
-				vntk.msg(
-					_("No thanks"),
-					fmt.f(_("How many {chosentitle}s do you think you need? If you think you need more than {limit}, then I don't think I want to be anywhere near your ship."), pdata )
-				)
-				return
+				local allowed = false
+				if count - 1 < lll then
+					replacement, allowed = select_replacement(replacement, counted[1], pdata)
+				end
+				if not allowed then
+					pdata.chosentitle = ttt
+					pdata.limit = lll
+					vntk.msg(
+						_("No thanks"),
+						fmt.f(_("How many {chosentitle}s do you think you need? If you think you need more than {limit}, then I don't think I want to be anywhere near your ship."), pdata )
+					)
+					return
+				end
 			end
 		end
 	end
 
 
-	local i = #mem.companions + 1
+	local next_index = #mem.companions + 1
 	
-	if i * 0.96 >= getMaxCrew() and pdata.typetitle == "Crew" then
+	if next_index * 0.96 >= getMaxCrew() and pdata.typetitle == "Crew" then
 		local params = {
 			["start"] = pick_one({
 				_("Oh hey,"),
@@ -169,6 +235,12 @@ function approachGenericCrewmate(npc_id)
 		return
 	end
 		
+	local enlisted, denial = enlist_crew(replacement, pdata)
+	if not enlisted then
+		vntk.msg(_("Required commander"), denial)
+		return
+	end
+
 	if pdata.deposit and pdata.deposit > 0 then
 		player.pay(-pdata.deposit, true)
 		playMoney()
@@ -181,7 +253,6 @@ function approachGenericCrewmate(npc_id)
 	else
 		vntk.msg(fmt.f(_("{typetitle} hired"), pdata), fmt.f(_("You pay the {skill} {typetitle}, who heads towards your ship to begin a new life."), pdata ))
 	end
-	mem.companions[i] = pdata
 	evt.npcRm(npc_id)
 	npcs[npc_id] = nil
 	local id =
@@ -195,7 +266,7 @@ function approachGenericCrewmate(npc_id)
 	npcs[id] = pdata
 	evt.save(true)
 
-	local edata = mem.companions[i]
+	local edata = pdata
 	shiplog.create(logidstr, _("Ship Companions"), _("Ship Companions"))
 	shiplog.append(logidstr, fmt.f(_("You hired '{name}' to join your crew."), edata))
 	-- hiring a crew member usually means a little bit of a mess initially
@@ -205,6 +276,7 @@ end
 -- Approaching unhired companion escort at the bar
 function approachEscortCompanion(npc_id)
 	local pdata = npcs[npc_id]
+	local replacement
 	if pdata == nil then
 		evt.npcRm(npc_id)
 		return
@@ -223,23 +295,30 @@ function approachEscortCompanion(npc_id)
 	-- check if this ship has an escort
 	for _i, pers in ipairs(mem.companions) do
 		if pers.skill == "Escort" then
-			-- TODO : generate a rejection
-			vntk.msg(
-				_("No thanks"),
-				_(
-					"You already have an escort on your ship. I need my space. I need my privacy. I need my customers. I'll find another ship."
+			local allowed
+			replacement, allowed = select_replacement(replacement, pers, pdata)
+			if not allowed then
+				vntk.msg(
+					_("No thanks"),
+					_(
+						"You already have an escort on your ship. I need my space. I need my privacy. I need my customers. I'll find another ship."
+					)
 				)
-			)
-			return
+				return
+			end
 		end
+	end
+
+	local enlisted, denial = enlist_crew(replacement, pdata)
+	if not enlisted then
+		vntk.msg(_("Required commander"), denial)
+		return
 	end
 
 	if pdata.deposit then
 		player.pay(-pdata.deposit, true)
 	end
 	
-	local i = #mem.companions + 1
-	mem.companions[i] = pdata
 	evt.npcRm(npc_id)
 	npcs[npc_id] = nil
 	local id =
@@ -253,7 +332,7 @@ function approachEscortCompanion(npc_id)
 	npcs[id] = pdata
 	evt.save(true)
 
-	local edata = mem.companions[i]
+	local edata = pdata
 	shiplog.create(logidstr, _("Ship Companions"), _("Ship Companions"))
 	shiplog.append(logidstr, fmt.f(_("You allowed '{name}' to live on your ship with your crew."), edata))
 	-- the companion likes luxury and will do a little bit of initial cleaning
@@ -263,6 +342,7 @@ end
 -- Approaching unhired demo man at the bar
 function approachDemolitionMan(npc_id)
 	local pdata = npcs[npc_id]
+	local replacement
 	if pdata == nil then
 		evt.npcRm(npc_id)
 		return
@@ -279,15 +359,17 @@ function approachDemolitionMan(npc_id)
 
 	for _i, pers in ipairs(mem.companions) do
 		if pers.skill == _("Demolition") then
-			-- TODO : generate a rejection
-			vntk.msg(
-				_("No thanks"),
-				_(
-					"There's no room for two pyromaniacs on one ship. I'll save you the trouble and get out of your hair."
+			local allowed
+			replacement, allowed = select_replacement(replacement, pers, pdata)
+			if not allowed then
+				vntk.msg(
+					_("No thanks"),
+					_(
+						"There's no room for two pyromaniacs on one ship. I'll save you the trouble and get out of your hair."
+					)
 				)
-			)
-			evt.npcRm(npc_id)
-			return
+				return
+			end
 		end
 	end
 
@@ -295,19 +377,29 @@ function approachDemolitionMan(npc_id)
 	local count = 0
 	local limit = SHIP_CREW_LIMITS[_("Engineer")] or 1
 	for _i, crewmate in ipairs(mem.companions) do
-		if crewmate.typetitle == _("Engineer") then
+		if crewmate ~= replacement and crewmate.typetitle == _("Engineer") then
 			count = count + 1
 			if count >= limit then
-				pdata.limit = limit
-				vntk.msg(
-					_("No thanks"),
-					fmt.f(_("How many {typetitle}s do you think you need? If you think you need more than {limit}, then I don't think I want to be anywhere near your ship."), pdata )
-				)
-				return
+				local allowed
+				replacement, allowed = select_replacement(replacement, crewmate, pdata)
+				if not allowed then
+					pdata.limit = limit
+					vntk.msg(
+						_("No thanks"),
+						fmt.f(_("How many {typetitle}s do you think you need? If you think you need more than {limit}, then I don't think I want to be anywhere near your ship."), pdata )
+					)
+					return
+				end
 			end
 		end
 	end
 	
+	local enlisted, denial = enlist_crew(replacement, pdata)
+	if not enlisted then
+		vntk.msg(_("Required commander"), denial)
+		return
+	end
+
 	if pdata.deposit then
 		player.pay(-pdata.deposit, true)
 		playMoney()
@@ -316,15 +408,13 @@ function approachDemolitionMan(npc_id)
 	vntk.msg(fmt.f(_("{typetitle} hired"), pdata), fmt.f(_("You pay the {skill} {typetitle}, who heads towards your ship to begin a new life of violent adventure."), pdata ))
 
 	
-	local i = #mem.companions + 1
-	mem.companions[i] = pdata
 	evt.npcRm(npc_id)
 	npcs[npc_id] = nil
 	local id = evt.npcAdd("approachCompanion", pdata.name, pdata.portrait, _("This is one of your crewmates."), 8)
 	npcs[id] = pdata
 	evt.save(true)
 
-	local edata = mem.companions[i]
+	local edata = pdata
 	shiplog.create(logidstr, _("Ship Companions"), _("Ship Companions"))
 	shiplog.append(logidstr, fmt.f(_("You hired '{name}' to join your crew."), edata))
 	-- hiring this guy in this condition (the special hiring function, not generic engineer one)
@@ -1310,7 +1400,8 @@ function shuttle_check_dock_distance( args )
 			fmt.f(
 				_("{skill} {name} was lost -- never returned after losing communication during a cargo mission."), args.crewsheet
 				) ..
-			fmt.f(_(" The insurance deposit of {deposit} was written off, as was the {shuttle}."), { deposit = fmt.credits(args.crewsheet.deposit), shuttle = args.shuttle.ship or _("vessel") })
+			fmt.f(_(" The insurance deposit of {deposit} was written off, as was the {shuttle}."), { deposit = fmt.credits(args.crewsheet.deposit), shuttle = args.shuttle.ship or _("vessel") }),
+			{ force = true }
 			)
 		return
 	end

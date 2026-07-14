@@ -9,8 +9,18 @@ local function returned_shuttle_manager()
 	return FAKE_CAPTAIN.shuttle_manager
 end
 
+function external_commander_ready(payload)
+	if not payload or player.isLanded() then return end
+	local commander = getExternalCommander(payload.client)
+	if commander then
+		mothership = player.ship()
+		commander_button(commander)
+	end
+end
+
 function joyride_mothership_spawned(payload)
-	if not payload or payload.client ~= CLIENT_ID or not mem.crewmates_joyride then
+	if not payload or payload.client ~= mem.crewmates_joyride_client
+		or not mem.crewmates_joyride then
 		return
 	end
 	local commander = joyride_commander
@@ -21,20 +31,39 @@ function joyride_mothership_spawned(payload)
 	hook.pilot(commander.pilot, "hail", "startCommandDiscussion")
 end
 
-function joyride_ended(payload)
-	if not payload or payload.client ~= CLIENT_ID or not mem.crewmates_joyride then
-		return
-	end
-
+local function mark_virtual_shuttle_returned(payload)
 	local manager = returned_shuttle_manager()
-	if manager and manager.manager and payload.outfits then
-		manager.manager.outfits = payload.outfits
-	end
 	if manager and manager.shuttle then
 		manager.shuttle.out = nil
 	end
 	if mem.ship_interior.shuttle then
 		mem.ship_interior.shuttle.out = nil
+	end
+	if payload and payload.outfits and manager and manager.manager then
+		manager.manager.outfits = payload.outfits
+	end
+end
+
+function joyride_shuttle_returned(payload)
+	if not payload or payload.client ~= mem.crewmates_joyride_client
+		or not mem.crewmates_joyride then
+		return
+	end
+	mark_virtual_shuttle_returned(payload)
+end
+
+function joyride_ended(payload)
+	if not payload or payload.client ~= mem.crewmates_joyride_client
+		or not mem.crewmates_joyride then
+		return
+	end
+
+	local manager = returned_shuttle_manager()
+	if payload.returned_kind ~= "owned" then
+		mark_virtual_shuttle_returned(payload)
+		if payload.hull and manager and manager.shuttle then
+			manager.shuttle.ship = ship.get(payload.hull)
+		end
 	end
 
 	local commander = joyride_commander
@@ -43,6 +72,7 @@ function joyride_ended(payload)
 	end
 	joyride_commander = nil
 	mem.crewmates_joyride = nil
+	mem.crewmates_joyride_client = nil
 	FAKE_CAPTAIN.shuttle_manager = nil
 	if commander then
 		commander_button(commander)
@@ -90,18 +120,28 @@ function player_swaps_to_shuttle(args)
 	mothership = player.ship()
 	joyride_commander = commander
 	mem.crewmates_joyride = true
+	local selected_profile, selected_client = getExternalShuttleProfile(commander)
+	selected_profile = args.shuttle_profile or selected_profile
+	local profile = {
+		client = selected_client or CLIENT_ID,
+		name = fmt.f(_("{skill} {typetitle} {name}"), commander),
+		faction = commander.faction,
+		ai = "escort_guardian",
+		noland = _("The shuttle must return to its mothership before landing."),
+	}
+	for key, value in pairs(selected_profile or {}) do
+		profile[key] = value
+	end
+	if profile.landable then
+		profile.noland = nil
+	end
+	mem.crewmates_joyride_client = profile.client
 	mem.ship_interior.shuttle.out = true
 	local acquired = fmt.f(
 		_("The shuttle bay of your {mothership}."),
 		{ mothership = player.ship() }
 	)
-	joyride.swap_to_subship(player.pilot(), template, acquired, {
-		client = CLIENT_ID,
-		name = fmt.f(_("{skill} {typetitle} {name}"), commander),
-		faction = commander.faction,
-		ai = "escort_guardian",
-		noland = _("The shuttle must return to its mothership before landing."),
-	})
+	joyride.swap_to_subship(player.pilot(), template, acquired, profile)
 
 	clearCommanderInterface()
 	local shuttle = player.pilot()
@@ -150,9 +190,14 @@ end
 
 return contract.capture {
 	name = "shuttle",
-	requires = { "context", "content.character", "management", "management_discussions" },
+	requires = {
+		"context", "content.character", "integration", "management",
+		"management_discussions",
+	},
 	exports = {
-		"joyride_mothership_spawned", "joyride_ended",
+		"external_commander_ready",
+		"joyride_mothership_spawned", "joyride_shuttle_returned",
+		"joyride_ended",
 		"player_swaps_to_shuttle", "hail_hook", "commander_button",
 		"commander_button_aux",
 	},

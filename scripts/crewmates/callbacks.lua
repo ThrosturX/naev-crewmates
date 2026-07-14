@@ -14,7 +14,8 @@ callbacks.names = {
    "shuttle_check_dock_distance", "away_mission", "smuggler_cargobay",
    "engineer_chief", "engineer_shield", "engineer_power", "engineer_armour",
    "player_boarding_c4", "detonate_c4",
-   "joyride_mothership_spawned", "joyride_ended",
+   "joyride_mothership_spawned", "joyride_shuttle_returned", "joyride_ended",
+   "external_commander_ready",
    "player_swaps_to_shuttle", "hail_hook", "commander_button",
    "commander_button_aux",
 }

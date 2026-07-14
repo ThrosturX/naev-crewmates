@@ -15,12 +15,14 @@ manifest:
 test:
 	@tests/installer.sh
 	@lua tests/modules.lua
+	@lua tests/commander_contract.lua
 	@lua tests/pilotname.lua
 	@lua tests/shuttle_lifecycle.lua
 	@lua tests/qa_fixture.lua
 	@lua tests/runtime_contract.lua
 	@lua tests/static_contracts.lua
 	@if command -v luajit >/dev/null 2>&1; then luajit tests/modules.lua; fi
+	@if command -v luajit >/dev/null 2>&1; then luajit tests/commander_contract.lua; fi
 	@if command -v luajit >/dev/null 2>&1; then luajit tests/pilotname.lua; fi
 	@if command -v luajit >/dev/null 2>&1; then luajit tests/shuttle_lifecycle.lua; fi
 	@if command -v luajit >/dev/null 2>&1; then luajit tests/qa_fixture.lua; fi

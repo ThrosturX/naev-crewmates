@@ -24,11 +24,12 @@ package.preload.vntk = function()
 end
 
 local pilot_adds = 0
+local template_outfits = {}
 local template = {
    setVel = function() end,
    setDir = function() end,
    outfitRm = function() end,
-   outfitAdd = function() end,
+   outfitAdd = function(_, name) template_outfits[#template_outfits + 1] = name end,
 }
 local player_pilot = {
    pos = function() return 'position' end,
@@ -48,6 +49,9 @@ host.pilot = {
 host.player = {
    pilot = function() return player_pilot end,
    ship = function() return 'QA Carrier' end,
+}
+host.ship = {
+   get = function(name) return 'ship:' .. name end,
 }
 host.system = { cur = function() return 'Delta Polaris' end }
 host.naev = {
@@ -117,6 +121,14 @@ for index, name in ipairs {
       exports = { export },
    }
 end
+local external_profile
+host.getExternalShuttleProfile = function()
+   return external_profile, external_profile and 'nomad' or nil
+end
+specifications[#specifications + 1] = contract.capture {
+   name = 'integration',
+   exports = { 'getExternalShuttleProfile' },
+}
 specifications[#specifications + 1] = require 'crewmates.shuttle'
 local registry = contract.wire(specifications)
 local shuttle = registry.module('shuttle')
@@ -143,14 +155,57 @@ assert(commander.pilot == mothership_pilot and hail_pilot == mothership_pilot,
    'Crewmates must attach its commander to Joyride\'s mothership')
 
 shuttle.joyride_ended {
-   client = 'TXCrewmates', outfits = { 'Pulse Scanner' },
+   client = 'TXCrewmates', returned_kind = 'virtual', hull = 'Llama',
+   outfits = { 'Pulse Scanner' },
 }
 assert(not host.mem.crewmates_joyride and not host.mem.ship_interior.shuttle.out,
    'returning must clear Crewmates joyride state')
 assert(manager.manager.outfits[1] == 'Pulse Scanner',
    'returned shuttle outfitting must be preserved')
+assert(manager.shuttle.ship == 'ship:Llama',
+   'a returned virtual replacement must become the commander shuttle')
 assert(commander.pilot == nil
    and registry.module('context').joyride_commander == nil,
    'returning must release the transient commander pilot')
+
+host.mem.ship_interior.shuttle = { ship = 'Alpaca' }
+commander.shuttle = host.mem.ship_interior.shuttle
+commander.manager = { outfits = { 'Persistent Scanner' } }
+template_outfits = {}
+assert(shuttle.player_swaps_to_shuttle {
+   commander = commander,
+   shuttle_manager = commander,
+}, 'a required commander must launch its own shuttle')
+assert(template_outfits[1] == 'Persistent Scanner',
+   'command launch must restore the commander shuttle loadout')
+shuttle.joyride_ended {
+   client = 'TXCrewmates', returned_kind = 'virtual', hull = 'Alpaca',
+   outfits = { 'Updated Scanner' },
+}
+assert(commander.manager.outfits[1] == 'Updated Scanner',
+   'command return must persist the updated shuttle loadout')
+
+host.mem.ship_interior.shuttle = { ship = 'Alpaca' }
+manager.shuttle = host.mem.ship_interior.shuttle
+external_profile = {
+   client = 'nomad', landable = true, trade_replacement = true,
+   owned_handoff = true, owned_escorts = true,
+}
+shuttle.player_swaps_to_shuttle {
+   commander = commander,
+   shuttle_manager = manager,
+}
+assert(swap_call.profile.client == 'nomad' and swap_call.profile.landable,
+   'registered Nomad options must select the opt-in Joyride profile')
+shuttle.joyride_shuttle_returned {
+   client = 'nomad', outfits = { 'Scanner' },
+}
+assert(not manager.shuttle.out and host.mem.crewmates_joyride,
+   'Buy handoff must mark the virtual shuttle returned without ending the sortie')
+shuttle.joyride_ended {
+   client = 'nomad', returned_kind = 'owned', hull = 'Hyena', outfits = {},
+}
+assert(manager.shuttle.ship == 'Alpaca',
+   'returning an owned seat must not replace the commander virtual shuttle')
 
 print('ok - Crewmates Joyride integration')

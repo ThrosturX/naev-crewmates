@@ -264,6 +264,7 @@ function takeoff()
 end
 
 function land()
+	hooks.refresh_external_commander(mem)
 	seedQaFixture(mem)
 	if mem.crewmates_joyride then
 		return

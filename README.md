@@ -12,6 +12,10 @@ runs the small standalone test suite for modules that do not require the game
 runtime. In-game behavior still needs the smoke test documented in
 `MAINTAINERS.md`.
 
+Dependent plugins can register a required commander, obtain that commander's
+Alpaca, and attach the commander to an external Joyride mothership through
+`require "crewmates.api"`. See `INTEGRATION.md` for the supported contract.
+
 A reusable `Crewmates QA` pilot is checked in under `tests/fixtures/pilots/`.
 Install a fresh copy without touching another pilot with
 `tests/install-qa-pilot.sh`; pass a Naev data directory as its optional argument
