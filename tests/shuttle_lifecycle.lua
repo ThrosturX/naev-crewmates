@@ -22,6 +22,9 @@ end
 package.preload.vntk = function()
    return { msg = function() error('unexpected launch error') end }
 end
+package.preload['bioship.skills'] = function()
+   return { set = { attack = { attack1 = {}, attack2 = {} } } }
+end
 
 local pilot_adds = 0
 local template_outfits = {}
@@ -92,7 +95,14 @@ local commander = {
 }
 local manager = {
    name = 'QA Shuttle Pilot',
-   manager = { outfits = { 'Small Cargo Pod' } },
+   manager = {
+      outfits = { 'Small Cargo Pod' },
+      virtual_state = {
+         hull = 'Alpaca',
+         shipvars = { biostage = 2, bio_attack1 = true },
+         weapon_sets = { [1] = { 3 } },
+      },
+   },
    shuttle = host.mem.ship_interior.shuttle,
 }
 host.getCommander = function() return commander end
@@ -142,6 +152,16 @@ assert(swap_call and swap_call.profile.client == 'TXCrewmates',
    'Crewmates must identify itself to Joyride')
 assert(swap_call.profile.ai == 'escort_guardian',
    'Joyride must receive the commander mothership AI')
+assert(swap_call.profile.persist_virtual_state
+   and swap_call.profile.virtual_state == manager.manager.virtual_state,
+   'Crewmates must opt into restoring its persistent virtual shuttle state')
+local persistent_vars = {}
+for _shipvar_index, name in ipairs(swap_call.profile.shipvars) do
+   persistent_vars[name] = true
+end
+assert(persistent_vars.bioshipexp and persistent_vars.biostage
+   and persistent_vars.bio_attack1 and persistent_vars.bio_attack2,
+   'Crewmates must request core and discovered bioship variables')
 assert(host.mem.crewmates_joyride and host.mem.ship_interior.shuttle.out,
    'Crewmates must mark its shuttle in flight')
 
@@ -157,6 +177,10 @@ assert(commander.pilot == mothership_pilot and hail_pilot == mothership_pilot,
 shuttle.joyride_ended {
    client = 'TXCrewmates', returned_kind = 'virtual', hull = 'Llama',
    outfits = { 'Pulse Scanner' },
+   virtual_state = {
+      hull = 'Llama', shipvars = { biostage = 3 },
+      weapon_sets = { [2] = { 4 } },
+   },
 }
 assert(not host.mem.crewmates_joyride and not host.mem.ship_interior.shuttle.out,
    'returning must clear Crewmates joyride state')
@@ -164,6 +188,10 @@ assert(manager.manager.outfits[1] == 'Pulse Scanner',
    'returned shuttle outfitting must be preserved')
 assert(manager.shuttle.ship == 'ship:Llama',
    'a returned virtual replacement must become the commander shuttle')
+assert(manager.manager.virtual_state.hull == 'Llama'
+   and manager.manager.virtual_state.shipvars.biostage == 3
+   and manager.manager.virtual_state.weapon_sets[2][1] == 4,
+   'returned virtual state must remain attached to the shuttle manager')
 assert(commander.pilot == nil
    and registry.module('context').joyride_commander == nil,
    'returning must release the transient commander pilot')
@@ -171,6 +199,10 @@ assert(commander.pilot == nil
 host.mem.ship_interior.shuttle = { ship = 'Alpaca' }
 commander.shuttle = host.mem.ship_interior.shuttle
 commander.manager = { outfits = { 'Persistent Scanner' } }
+commander.manager.virtual_state = {
+   hull = 'Alpaca', shipvars = { bioshipexp = 700 },
+   weapon_sets = { [3] = { 5 } },
+}
 template_outfits = {}
 assert(shuttle.player_swaps_to_shuttle {
    commander = commander,
@@ -178,12 +210,21 @@ assert(shuttle.player_swaps_to_shuttle {
 }, 'a required commander must launch its own shuttle')
 assert(template_outfits[1] == 'Persistent Scanner',
    'command launch must restore the commander shuttle loadout')
+assert(swap_call.profile.virtual_state == commander.manager.virtual_state,
+   'command launch must pass the commander shuttle state back to Joyride')
 shuttle.joyride_ended {
    client = 'TXCrewmates', returned_kind = 'virtual', hull = 'Alpaca',
    outfits = { 'Updated Scanner' },
+   virtual_state = {
+      hull = 'Alpaca', shipvars = { bioshipexp = 900 },
+      weapon_sets = { [4] = { 6 } },
+   },
 }
 assert(commander.manager.outfits[1] == 'Updated Scanner',
    'command return must persist the updated shuttle loadout')
+assert(commander.manager.virtual_state.shipvars.bioshipexp == 900
+   and commander.manager.virtual_state.weapon_sets[4][1] == 6,
+   'command return must persist bioship and weapon-set state')
 
 host.mem.ship_interior.shuttle = { ship = 'Alpaca' }
 manager.shuttle = host.mem.ship_interior.shuttle
@@ -207,5 +248,14 @@ shuttle.joyride_ended {
 }
 assert(manager.shuttle.ship == 'Alpaca',
    'returning an owned seat must not replace the commander virtual shuttle')
+
+host.naev.claimTest = function() return false end
+local launched, launch_reason = shuttle.player_swaps_to_shuttle {
+   commander = commander,
+   shuttle_manager = manager,
+   show_error = false,
+}
+assert(not launched and launch_reason:find('Electromagnetic interference', 1, true),
+   'API launches must return claim failures without opening a VN dialogue')
 
 print('ok - Crewmates Joyride integration')

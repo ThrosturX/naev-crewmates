@@ -49,7 +49,13 @@ local runtime_source = read('scripts/crewmates/runtime.lua')
 assert(runtime_source:find('shuttle_manager = commander', 1, true),
    'public command launch must persist loadouts on the registered commander')
 
-for _, path in ipairs(files) do
+local guardian_source = read('ai/escort_guardian.lua')
+assert(not guardian_source:find('ai.shoot()', 1, true)
+   and guardian_source:find('ai.weapset( 1, true )', 1, true)
+   and guardian_source:find('ai.weapset( 2, true )', 1, true),
+   'guardian AI must fire through supported weapon-set controls')
+
+for _file_index, path in ipairs(files) do
    local source = read(path)
    local capture = assert(source:match('return%s+contract%.capture%s*(%b{})'),
       path .. ' has no module contract')
@@ -70,7 +76,7 @@ for _, path in ipairs(files) do
 end
 
 local checked = 0
-for _, path in ipairs(files) do
+for _file_index, path in ipairs(files) do
    local module = modules[path]
    local command = string.format(
       "luacheck %q --codes --no-color --formatter plain 2>&1",

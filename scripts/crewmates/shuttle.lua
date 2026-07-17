@@ -2,6 +2,7 @@ local fmt = require "format"
 local vntk = require "vntk"
 local joyride = require "joyride"
 local contract = require "crewmates.module_contract"
+local shuttle_state = require "crewmates.shuttle_state"
 
 local CLIENT_ID = "TXCrewmates"
 
@@ -42,6 +43,7 @@ local function mark_virtual_shuttle_returned(payload)
 	if payload and payload.outfits and manager and manager.manager then
 		manager.manager.outfits = payload.outfits
 	end
+	shuttle_state.record_return(manager, payload)
 end
 
 function joyride_shuttle_returned(payload)
@@ -81,11 +83,11 @@ end
 
 function player_swaps_to_shuttle(args)
 	if not naev.claimTest(system.cur()) then
-		vntk.msg(
-			_("Undocking error"),
-			_("Electromagnetic interference makes it unsafe to launch the officer's shuttle in this system.")
-		)
-		return false
+		local reason = _("Electromagnetic interference makes it unsafe to launch the officer's shuttle in this system.")
+		if args.show_error ~= false then
+			vntk.msg(_("Undocking error"), reason)
+		end
+		return false, reason
 	end
 	if naev.cache().joyride then
 		return false
@@ -112,7 +114,7 @@ function player_swaps_to_shuttle(args)
 	if shuttle_manager.manager and shuttle_manager.manager.outfits then
 		template:outfitRm("all")
 		template:outfitRm("cores")
-		for _, outfit in ipairs(shuttle_manager.manager.outfits) do
+		for _outfit_index, outfit in ipairs(shuttle_manager.manager.outfits) do
 			template:outfitAdd(outfit, 1, true, false)
 		end
 	end
@@ -132,6 +134,7 @@ function player_swaps_to_shuttle(args)
 	for key, value in pairs(selected_profile or {}) do
 		profile[key] = value
 	end
+	shuttle_state.prepare_profile(profile, shuttle_manager)
 	if profile.landable then
 		profile.noland = nil
 	end

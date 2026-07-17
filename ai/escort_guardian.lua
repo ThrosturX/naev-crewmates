@@ -44,9 +44,10 @@ function idle ()
 
    local hostiles = pp:getEnemies(mem.guarddodist, me:pos(), true, false, false)
    local detected_hostile = nil
-   local can_send = rnd.rnd(1, #subordinates * 2) == #subordinates
+   local can_send = #subordinates > 0
+      and rnd.rnd(1, #subordinates * 2) == #subordinates
 
-   for _, enemy in ipairs(hostiles) do
+   for _enemy_index, enemy in ipairs(hostiles) do
       if should_attack(enemy) then
          local dangerous = false
          if enemy:ship():size() >= 3 then
@@ -54,7 +55,7 @@ function idle ()
          end
 
          if dangerous then
-            for _, under in ipairs(subordinates) do
+            for _subordinate_index, under in ipairs(subordinates) do
                me:msg(under, "e_attack", enemy)
             end
             ai.pushtask( "attack", enemy )
@@ -89,7 +90,8 @@ function idle ()
             ai.hostile(target)
             ai.settarget( target )
             ai.aim(target)
-            ai.shoot()
+            ai.weapset( 1, true )
+            ai.weapset( 2, true )
             if not detected_hostile or ai.dist2(detected_hostile) > ai.dist2(target) then
                 detected_hostile = target
             end
@@ -105,7 +107,7 @@ function idle ()
    if enemy ~= nil then
       ai.hostile(enemy)
       ai.weapset( 5 )
-      for _, under in ipairs(me:followers()) do
+      for _subordinate_index, under in ipairs(me:followers()) do
          me:msg(under, "e_attack", enemy)
       end
       ai.pushtask("attack", enemy)
@@ -132,4 +134,3 @@ function idle ()
    ai.iface(pp)
    ai.accel()
 end
-

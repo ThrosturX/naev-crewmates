@@ -51,14 +51,17 @@ local function launch_commander_shuttle(client)
    if naev.cache().joyride then
       return false, _("another auxiliary ship is already active")
    end
-   local launched = shuttle.player_swaps_to_shuttle {
+   local launched, launch_reason = shuttle.player_swaps_to_shuttle {
       commander = commander,
       -- The required commander owns and pilots this shuttle. Using the same
       -- persisted manager record makes Crewmates apply and retain its loadout.
       shuttle_manager = commander,
+      -- API clients report failures in their own UI context. In particular,
+      -- custom event hooks cannot safely start a VN error dialogue.
+      show_error = false,
    }
    if not launched then
-      return false, _("the commander shuttle could not launch")
+      return false, launch_reason or _("the commander shuttle could not launch")
    end
    return true
 end
