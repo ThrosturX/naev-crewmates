@@ -2,6 +2,13 @@ local fmt = require "format"
 local lang = require "language.language"
 local contract = require "crewmates.module_contract"
 
+local function contains_ci(haystack, needle)
+	if type(haystack) ~= "string" or needle == nil then
+		return false
+	end
+	return haystack:lower():find(tostring(needle):lower(), 1, true) ~= nil
+end
+
 function speak_notify(speaker)
 	local conversation = getConversation(speaker)
 	local message = pick_one(conversation.message)
@@ -31,7 +38,7 @@ end
 -- returns the keyword that evaluator didn't want to hear
 function dislikes_phrase(phrase, evaluator)
 	for disgust, _bool in pairs(getTopics(evaluator).disliked) do
-		if string.find(phrase, disgust) then
+		if contains_ci(phrase, disgust) then
 			return disgust
 		end
 	end
@@ -42,7 +49,7 @@ end
 -- returns the keyword that evaluator is interested in
 function doeslike_phrase(phrase, evaluator)
 	for interest, _phrases in pairs(getTopics(evaluator).liked) do
-		if string.find(phrase, interest) then
+		if contains_ci(phrase, interest) then
 			return interest
 		end
 	end
@@ -183,39 +190,39 @@ function analyze_spoken(spoken, speaker, listener)
 	-- lets do a simple analysis so that we seem like we know what we're saying or why we're saying it
 	local analysis = {}
 	-- check if it was a question
-	analysis.index = string.find(spoken, "?")
+	analysis.index = spoken:find("?", 1, true)
 	if analysis.index then -- it was probably a question
 		-- what was it about?
-		if string.find(spoken, "remember")
-			or string.find(spoken, "are you")
-			or string.find(spoken, "Does")
-			or string.find(spoken, "Do ")
-			or string.find(spoken, "play")
-			or string.find(spoken, "right")
+		if contains_ci(spoken, "remember")
+			or contains_ci(spoken, "are you")
+			or contains_ci(spoken, "does")
+			or contains_ci(spoken, "do ")
+			or contains_ci(spoken, "play")
+			or contains_ci(spoken, "right")
 		then
 			-- seeking affirmation
 			analysis.question = "affirm"
-		elseif string.find(spoken, "When") then
+		elseif contains_ci(spoken, "when") then
 			-- asking about time
 			analysis.question = "time"
-		elseif string.find(spoken, "Why")
-			or string.find(spoken, "What")
+		elseif contains_ci(spoken, "why")
+			or contains_ci(spoken, "what")
 		then
 			-- asking something specific
 			analysis.question = "specific"
-		elseif string.find(spoken, "Is")
-			or string.find(spoken, "can ")
-			or string.find(spoken, "I ")
+		elseif contains_ci(spoken, "is")
+			or contains_ci(spoken, "can ")
+			or contains_ci(spoken, "i ")
 		then -- asking something we're probably unsure about and makes us feel uncomfortable
 			analysis.question = "affirm_negative"
 		end
 	end
 
 	-- check if it has my name or article in it (right now, I don't think about other peolpe)
-	if string.find(spoken, listener.name)
-		or string.find(spoken, listener.firstname)
-		or string.find(spoken, listener.article_subject)
-		or string.find(spoken, listener.article_object)
+	if contains_ci(spoken, listener.name)
+		or contains_ci(spoken, listener.firstname)
+		or contains_ci(spoken, listener.article_subject)
+		or contains_ci(spoken, listener.article_object)
 		then
 		analysis.subject = "me"
 	end
@@ -230,7 +237,7 @@ function analyze_spoken(spoken, speaker, listener)
 			-- nice to feel included in conversation
 			listener.satisfaction = listener.satisfaction + 0.01
 			return pick_one(getConversation(listener).default_participation), "small talk"
-		elseif analysis.quesiton == "affirm_negative"
+		elseif analysis.question == "affirm_negative"
 			or analysis.question == "time" then
 			-- making me uncomfortable
 			listener.satisfaction = listener.satisfaction - 0.01
@@ -241,16 +248,18 @@ function analyze_spoken(spoken, speaker, listener)
 	-- if we still have nothing, also do a deep search of our topics
 	-- this will degrade performance as the memory table grows and
 	-- hopefully give us the kick we need to start pruning it
-	local liked, disliked = getTopics(listener)
+	local topics = getTopics(listener)
+	local liked = topics.liked
+	local disliked = topics.disliked
 	analysis.choices = {}
 	local brief = sanitize_phrase(spoken)
-	for my_topic, phrases in pairs(pick_some(liked)) do
+	for my_topic, phrases in pairs(liked) do
 --		print("checking liked topic with phrases", my_topic, phrases)
 		if #analysis.choices == 0 then
 			for _, phrase in ipairs(pick_some(phrases)) do
 				local extracted = extract_keyword(phrase)
 				-- let's see if we think they might be talking about this
-				if string.find(brief, extracted) then
+				if contains_ci(brief, extracted) then
 					table.insert(analysis.choices, my_topic)
 				end
 			end
@@ -395,11 +404,6 @@ function converse_topic(topic, talker, other)
 end
 
 function speak(talker, other)
-    if true then
-        print("skipping speech")
-        return
-    end
-
 	local colour = "F"
 	local choices
 	local last_sentiment = talker.conversation.sentiment
@@ -468,25 +472,17 @@ function speak(talker, other)
 	end
 	
 	-- we didn't start discussing a topic, say what's on our mind
-	print("about to select speech")
 	local spoken = pick_one(choices)
-	print("talker wants to speak", talker.name, spoken)
 	-- say it
 	_comm(fmt.f("{typetitle} {name}", talker), spoken, colour)
-	local listener = getCrewmateOnboard()
+	local listener = other or getCrewmateOnboard()
 	-- if there's another person in the conversation, let them interact
 	-- a response is more likely than striking a conversation
 	if other and other.chatter * 1.5 > rnd.rnd() and other ~= FAKE_CAPTAIN then
 
 		-- see if we want to strike up a new conversation based on interests
 		for interest, _phrases in pairs(getTopics(other).liked) do
-			if string.find(spoken, interest) then
-				print(
-					fmt.f(
-						"detected {topic} from our list of topics {list}",
-						{topic = interest, list = tostring(getTopics(other).liked)}
-					)
-				)
+			if contains_ci(spoken, interest) then
 				return converse_topic(interest, other, talker)
 			end
 		end

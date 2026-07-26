@@ -153,11 +153,9 @@ function player_swaps_to_shuttle(args)
 	return true
 end
 
-function hail_hook(inputname, inputpress)
-	if inputpress and inputname == "hail"
-		and not player.pilot():target() and not player.pilot():nav() then
-		hook.timer(rnd.rnd(2, 6), "startCommandDiscussion")
-	end
+-- Kept as a compatibility callback for saves that serialized the old global
+-- input hook. New commander interfaces no longer register it.
+function hail_hook(_inputname, _inputpress)
 end
 
 function commander_button(officer)

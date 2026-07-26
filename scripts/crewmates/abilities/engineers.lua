@@ -51,15 +51,15 @@ function engineer_chief( engineer )
 	
 	if engis.shield and shield < alert_shield then
 		engineer_shield(engis.shield)
-		engineer.xp = engineer.xp + 0.01
+		engineer.xp = math.min(100, engineer.xp + 0.01)
 	end
 	if engis.hull and armour < alert_armor then
 		engineer_armour(engis.hull)
-		engineer.xp = engineer.xp + 0.01
+		engineer.xp = math.min(100, engineer.xp + 0.01)
 	end
 	if engis.power and pp:energy() < alert_power then
 		engineer_power(engis.power)
-		engineer.xp = engineer.xp + 0.01
+		engineer.xp = math.min(100, engineer.xp + 0.01)
 	end
 	
 	-- set the next hook to poll
@@ -88,7 +88,7 @@ function engineer_shield(engineer)
 			pp:setEnergy(current_power - power_needed, true)
 			pp:addHealth(0, surge)
 			engineer.satisfaction = engineer.satisfaction + 0.01
-			engineer.xp = math.max(100, engineer.xp + 0.01)
+			engineer.xp = math.min(100, engineer.xp + 0.01)
 			-- doing our job makes our workstation and the rest of the ship dirtier
 			mem.ship_interior.dirt = mem.ship_interior.dirt + engineer.xp * 0.06
 			-- reaction to having done something
@@ -111,7 +111,6 @@ end
 -- if we are at low power, the engineer tries to burn armor as fuel to generate power
 -- an unsatisfied engineer will waste power and drain armor (but earn satisfaction and stabilize)
 function engineer_power(engineer)
-    print("power engineer!")
 	if engineer.hook and engineer.hook.hook then
 		hook.rm(engineer.hook.hook)
 	end
@@ -120,19 +119,16 @@ function engineer_power(engineer)
 	local armour, _shield, _stress = pp:health(true)
 	if armour == nil then return end
 	local current_power = pp:energy(true)
-  	print(fmt.f("armour {armour} points energy {cp} ({energy} %)", { energy=pp:energy(), cp = current_power, armour=armour }))
 	if pp:energy() < math.min(50, 20 + engineer.xp * 0.1) then
 		-- try to initiate a power surge
 		local surge = engineer.xp * engineer.satisfaction * pp:ship():size() * 0.01
 		local armor_needed = math.max(engineer.xp * 0.1, surge * (120 - engineer.xp) - engineer.bonus) / (10 - pp:ship():size())
-  		print(fmt.f("armourneeded {armour_needed}/{armour} points surge {surge}", { energy=pp:energy(), cp = current_power, armour=armour, armour_needed=armor_needed, surge=surge }))
 		-- learn to not be too greedy with the armor
 		if armour > armor_needed * math.max(1, engineer.xp * 0.1) then
-            print(fmt.f("adding {pwr} power at expense of {arm} armor", { pwr=surge * 4, arm=armor_needed } ))
 			pp:setEnergy(current_power + surge * 4, true)
 			pp:addHealth(-armor_needed)
 			engineer.satisfaction = engineer.satisfaction + 0.01
-			engineer.xp = math.max(100, engineer.xp + 0.01)
+			engineer.xp = math.min(100, engineer.xp + 0.01)
 			-- doing our job makes our workstation and the rest of the ship dirtier
 			mem.ship_interior.dirt = mem.ship_interior.dirt + engineer.xp * 0.06
 			-- reaction to having done something
@@ -145,7 +141,6 @@ function engineer_power(engineer)
 				speak(engineer)
 			end -- otherwise: just stay silent
         else
-            print(fmt.f("engineer didn't do anything because {armor} < {armor_needed}", { armor=armour, armor_needed = armor_needed * engineer.xp * 0.1 } ))
 		end
 	end
 	

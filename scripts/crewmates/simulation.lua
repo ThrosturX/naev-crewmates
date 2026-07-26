@@ -23,26 +23,9 @@ function fixhooks()
 	hooks.repair(mem)
 end
 
--- calculate any bonuses that we might want to calculate
-function takeoff()
-	mem.last_system = system.cur()
-	if mem.crewmates_joyride then
-		return
-	end
-	print("regular takeoff")
-	fixhooks()
-	mothership = player.ship()
-
-	-- END QUICKFIX SECTION
-
-	-- start by checking if we want to alter our crew before assembling the roster
-	-- shuffle crew if necessary
-	local first_officer = SHIP_OFFICERS[_("First Officer")]
-	if first_officer then
-		firstOfficerPreflight( first_officer )
-	end
-
-	-- begin takeoff procedure (assemble roster)
+-- Rebuild all ship state derived from the current crew roster. This deliberately
+-- excludes event lifecycle work such as hook repair and preflight callbacks.
+local function recalculate_ship_crew_state()
 	local officers = {}		-- crew that unlock abilities/crew
 	local champions = {}	-- crew with special skills
 	champions.engineers = {}
@@ -170,6 +153,10 @@ function takeoff()
 		end
 	end
 	
+	-- Clear the previous takeoff's plugin contributions before applying current
+	-- officer bonuses. Resetting after sanitation erased its crew-space bonus.
+	player.pilot():intrinsicReset()
+
 	local sanitation_officer = officers[_("Sanitation Officer")]
 	if sanitation_officer then
 		-- strength from xp is shared with the subordinates (and the last term is the officer himself)
@@ -179,8 +166,6 @@ function takeoff()
 		player.pilot():intrinsicSet("crew", math.floor(0.03 * sanitation_officer.xp * workers.janitorial))
 	end
 	
-	-- modify intrinsic stats on takeoff if necessary
-	player.pilot():intrinsicReset()
 	-- A chief security officer acts as a multiplier for workers.security based on xp
 	local security_officer = officers[_("Chief Security Officer")]
 	if security_officer then
@@ -261,6 +246,28 @@ function takeoff()
 		mem.ship_interior.dirt = math.min(#mem.companions, mem.ship_interior.dirt)
 	end
 	print(fmt.f("There are {ej:.2f}/{need} effective janitors and ", { ej = effective_janitors, need = janitors_needed }) .. fmt.f("dirt is at {dirt:.1f} (accum at {dirt_accum:.2f})", mem.ship_interior ))
+end
+
+-- calculate any bonuses that we might want to calculate
+function takeoff()
+	mem.last_system = system.cur()
+	if mem.crewmates_joyride then
+		return
+	end
+	print("regular takeoff")
+	fixhooks()
+	mothership = player.ship()
+
+	-- END QUICKFIX SECTION
+
+	-- start by checking if we want to alter our crew before assembling the roster
+	-- shuffle crew if necessary
+	local first_officer = SHIP_OFFICERS[_("First Officer")]
+	if first_officer then
+		firstOfficerPreflight( first_officer )
+	end
+
+	recalculate_ship_crew_state()
 end
 
 function land()
@@ -534,8 +541,7 @@ end
 function period_fatigue()
 	-- check if its safe to update the mothership and recalculate values
 	if mem.ship_interior.shuttle and not mem.ship_interior.shuttle.out then
-		-- recalculate dirt accumulation rate (use takeoff, recalculates everything)
-		takeoff()
+		recalculate_ship_crew_state()
 		mothership = player.ship()
 	end
 	-- calculate natural dirt accumulation

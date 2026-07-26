@@ -140,10 +140,8 @@ function sentimentalize( pp, phrase )
 		end
 	end
 	
-	print("MUTATING SATISFACTION", pp.name, pp.satisfaction)
 	-- we have a calculated sentiment, let's not waste it since we are being sentimental
 	pp.satisfaction = pp.satisfaction + sentiment_score / (math.abs(sentiment_score) + math.min(16, pp.xp))
-	print("MUTATED SATISFACTION", pp.name, pp.satisfaction, captured_attractor, "-----", "Was it laggy?")
 	-- update our thoughts if we had one
 	pp.article_of_thought = captured_attractor or pp.article_of_thought
 end
@@ -155,10 +153,20 @@ function insert_sentiment(character, sentiment)
 		character.conversation.sentiments = {}
 	end
 
+	local sentiments = character.conversation.sentiments
+	for _, existing in ipairs(sentiments) do
+		if existing == sentiment then
+			return
+		end
+	end
+
 	-- see if we can take a noun from this sentiment and be thinking about it
 	sentimentalize(character, sentiment)
 	
-	table.insert(character.conversation.sentiments, sentiment)
+	table.insert(sentiments, sentiment)
+	while #sentiments > 16 do
+		table.remove(sentiments, 1)
+	end
 	character.xp = math.min(100, character.xp + 0.006)
 end
 
@@ -552,12 +560,8 @@ function create_memory(character, memory_type, params)
 			_(", but it feels like ages ago.")
 		}
 		local topics = getTopics(params)
-		if not topics.liked then
-			topics.liked = { _("things") }
-		end
-		if not topics.disliked then
-			topics.disliked = { _("things") }
-		end
+		local liked_topic = pick_key(topics.liked) or _("things")
+		local disliked_topic = pick_key(topics.disliked) or _("things")
 		local choices = {
 			-- some random memories from the bar
 			pick_one(actions) .. getBarSituation(params) .. pick_one(when),
@@ -565,14 +569,14 @@ function create_memory(character, memory_type, params)
 			add_special(character, "laugh") .. " " .. pick_one(actions) .. getBarSituation(params) .. pick_one(when),
 			-- remembering that they like some topic (or dislike)
 			pick_one(actions) ..
-				"talking a lot about things like the err " .. pick_key(topics.liked) .. " or whatever.",
-			pick_one(actions) .. "talking about the um " .. pick_key(topics.liked) .. " or whatever.",
+				"talking a lot about things like the err " .. liked_topic .. " or whatever.",
+			pick_one(actions) .. "talking about the um " .. liked_topic .. " or whatever.",
 			pick_one(actions) ..
 				"expressing concern when the conversation was focused on " ..
-					 pick_one(topics.disliked) .. ".",
+					 disliked_topic .. ".",
 			pick_one(actions) ..
 				"expressing concern when the conversation was focused on " ..
-					pick_one(topics.disliked) .. pick_one(when),
+					disliked_topic .. pick_one(when),
 			-- remembering that we had a special moment in this solar system
 			fmt.f(_("{name} and I had a special moment in {system}."), {name = params.firstname, system = system.cur()}),
 			fmt.f(_("I had a nice time with {name} in {system}."), {name = params.name, system = system.cur()}),
@@ -980,7 +984,7 @@ function give_item( character, item )
 end
 
 function has_interest(character, interest)
-	if not LOADED[character] then
+	if not LOADED[character.name] then
 		return false
 	end
 	for topic, _phrases in pairs(getTopics(character).liked) do

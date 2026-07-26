@@ -477,6 +477,29 @@ TOPICS = {}	-- topics to talk about
 NOTALK = {}	-- topics not to talk about
 SHORT_TERM_MEMORY = {}
 
+local function append_topic_map(destination, seen, source)
+	for topic, phrases in pairs(source or {}) do
+		if type(phrases) == "table" then
+			local target = destination[topic]
+			if not target then
+				target = {}
+				destination[topic] = target
+			end
+			local topic_seen = seen[topic]
+			if not topic_seen then
+				topic_seen = {}
+				seen[topic] = topic_seen
+			end
+			for _, phrase in ipairs(phrases) do
+				if not topic_seen[phrase] then
+					target[#target + 1] = phrase
+					topic_seen[phrase] = true
+				end
+			end
+		end
+	end
+end
+
 function getPreferences( character )
 	-- guard case resource not loaded
 	if not PREFERENCES[character.name] then
@@ -493,7 +516,9 @@ function getConversation(character)
 	if character.conversation then		-- special crewmate with custom lines
 		-- NOTE: our merge_tables isn't recursive, so we use full_merge here instead
 		result = full_merge(result, character.conversation)
-		table.insert(result.fatigue, fmt.f(_("*sigh*... Time for my {skill} duty I guess."), character ))
+		if character.skill then
+			table.insert(result.fatigue, fmt.f(_("*sigh*... Time for my {skill} duty I guess."), character ))
+		end
 	end
 	return result
 end
@@ -506,15 +531,18 @@ function getTopics(character)
 		NOTALK[character.name] = disliked
 	end
 
-	-- merge topics with memories
-	local memories = SHORT_TERM_MEMORY[character.name] or {}
-	if character.memories then
-		memories = merge_tables(memories, character.memories)
-	end
+	-- Build a fresh view so topic lookup does not mutate runtime caches. A
+	-- newly-created memory exists in both long- and short-term storage until
+	-- save/load, so deduplicate phrases while merging.
+	local liked = {}
+	local seen = {}
+	append_topic_map(liked, seen, TOPICS[character.name])
+	append_topic_map(liked, seen, character.memories)
+	append_topic_map(liked, seen, SHORT_TERM_MEMORY[character.name])
 		
 	return {
-		["liked"] = merge_tables(memories, TOPICS[character.name]),
-		["disliked"] = NOTALK
+		["liked"] = liked,
+		["disliked"] = NOTALK[character.name]
 	}
 end
 

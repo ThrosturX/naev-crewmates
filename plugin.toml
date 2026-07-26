@@ -1,7 +1,7 @@
 identifier = "TXCrewmates"
 name = "Crewmate companions"
 author = "ThrosturX"
-version = "0.13.1"
+version = "0.13.2"
 abstract = "Adds hireable crew to the game. Once hired, they live and breathe on your ship, can be promoted, have their own little personalities and engage in conversations between themselves."
 release_status = "development"
 tags = [ "casual", ]

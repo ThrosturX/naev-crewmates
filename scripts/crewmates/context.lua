@@ -619,38 +619,51 @@ function getCrewmateOnboard( on_shift )
 	if on_shift then
 		return loadOnShift()
 	end
-	local lind = math.min(#mem.companions, player.pilot():stats()["crew"])
-	for ii, worker in ipairs(mem.companions) do
-		if ii < lind then
-			-- if this worker is "away", move to the back
-			if worker.away then
-				mem.companions[ii] = mem.companions[lind]
-				mem.companions[lind] = worker
-				lind = lind - 1
-			end
+
+	-- Keep physically absent mission crew at the back of the ordered roster.
+	-- Crew on a break have an away record without a ship and remain aboard.
+	local present = {}
+	local off_ship = {}
+	for _, worker in ipairs(mem.companions) do
+		if worker.away and worker.away.ship then
+			off_ship[#off_ship + 1] = worker
 		else
-			break
+			present[#present + 1] = worker
+		end
+	end
+	if #off_ship > 0 then
+		for index, worker in ipairs(present) do
+			mem.companions[index] = worker
+		end
+		for index, worker in ipairs(off_ship) do
+			mem.companions[#present + index] = worker
 		end
 	end
 
-	-- we found at least one present crewmate, pick one
-	local candidate = mem.companions[1]
-	local choice
-	if lind > 0 then
-		choice = rnd.rnd(1, lind)
-		candidate = mem.companions[choice]
+	local capacity = math.min(#present, player.pilot():stats()["crew"])
+	if capacity <= 0 then
+		return nil
 	end
 
-	-- make sure our candidate is loaded
-	if not LOADED[candidate.name] and next(LOADED) then
-		-- pick a loaded candidate instead
-		local cname = pick_key(LOADED)
-		for _i, crew in ipairs(mem.companions) do
-			if crew.name == cname then
-				return crew
-			end
-		end 
-	elseif LOADED[candidate.name] then
+	local onboard = {}
+	local loaded = {}
+	for index = 1, capacity do
+		local worker = mem.companions[index]
+		local entry = { crew = worker, index = index }
+		onboard[#onboard + 1] = entry
+		if LOADED[worker.name] then
+			loaded[#loaded + 1] = entry
+		end
+	end
+
+	-- Prefer an already-vitalized crewmate, but load a present candidate when
+	-- none of the eligible crew has been loaded yet.
+	local pool = #loaded > 0 and loaded or onboard
+	local selected = pick_one(pool)
+	local candidate = selected.crew
+	if not LOADED[candidate.name] then
+		loadCrewmate(selected.index)
+	else
 		local already_on_shift = false
 		for _, crew in ipairs(SHIFT_DUTY) do
 			if crew == candidate then
@@ -658,13 +671,11 @@ function getCrewmateOnboard( on_shift )
 				break
 			end
 		end
-		if not already_on_shift then
+		if not already_on_shift and not candidate.away then
 			table.insert(SHIFT_DUTY, candidate)
 		end
-	else
-		return loadOnShift()
 	end
-	
+
 	return candidate
 end
 

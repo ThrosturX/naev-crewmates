@@ -854,7 +854,7 @@ function crewmate_barConversation(edata, npc_id)
 		-- adjust the sentiment
 		edata.conversation.sentiment =
 			fmt.f(
-			pick_one(edata.conversation.good_talker),
+			pick_one(getConversation(edata).good_talker),
 			{name = player.name(), article_subject = _("the captain"), article_object = _("the captain"), firstname = player.name() }
 		)
 

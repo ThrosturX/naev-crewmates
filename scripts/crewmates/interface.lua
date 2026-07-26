@@ -15,7 +15,6 @@ end
 function interface.add(mem, start_command_discussion)
    interface.clear(mem)
    info_button = player.infoButtonRegister(_('Discuss Command'), start_command_discussion, 2, 'D')
-   mem.hail_hook = hook.input('hail_hook')
 end
 
 return interface
