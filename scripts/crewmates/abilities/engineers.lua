@@ -2,6 +2,26 @@ local fmt = require "format"
 local vntk = require "vntk"
 local contract = require "crewmates.module_contract"
 
+local c4_sfx
+local c4_sound_choices
+
+local function play_c4_sound(pos, vel)
+	c4_sfx = c4_sfx or require "luaspfx.sfx"
+	if not c4_sound_choices then
+		c4_sound_choices = {
+			audiodata.new("snd/sounds/medexp1"),
+			audiodata.new("snd/sounds/medexp0"),
+			audiodata.new("snd/sounds/crash1"),
+			audiodata.new("snd/sounds/grenade"),
+			audiodata.new("snd/sounds/explosion0"),
+			audiodata.new("snd/sounds/explosion1"),
+			audiodata.new("snd/sounds/explosion2"),
+			audiodata.new("snd/sounds/tesla"),
+		}
+	end
+	c4_sfx(pos, vel, pick_one(c4_sound_choices))
+end
+
 function engineer_chief( engineer )
 	if engineer.hook and engineer.hook.hook then
 		hook.rm(engineer.hook.hook)
@@ -278,24 +298,15 @@ end
 -- a demoman's bomb explodes (single payload)
 function detonate_c4(target)
 	if target and target:exists() then
-		local sound_choices = {
-			"medexp1",
-			"medexp0",
-			"crash1",
-			"grenade",
-			"explosion0",
-			"explosion1",
-			"explosion2",
-			"tesla"
-		}
 		local dir_vec = vec2.new(math.floor(rnd.threesigma() * 30), math.floor(rnd.twosigma() * 20))
 		target:knockback(800, dir_vec, target:pos() - dir_vec)
 		target:setDir(target:dir() + rnd.threesigma() * 0.07)
 		local expl_pos = vec2.add(target:pos(), rnd.threesigma() * 2, rnd.twosigma() * 2)
+		local expl_vel = target:vel()
 		-- apply the damage (the player gets the credit)
-		target:damage(rnd.rnd(277, 313), 0, 100, "impact", player.pilot())
-		-- visual and audio effects?
-		audio.soundPlay(pick_one(sound_choices), expl_pos)
+		target:damage(rnd.rnd(277, 313), 0, 100, "explosion_splash", player.pilot())
+		-- audio effect
+		play_c4_sound(expl_pos, expl_vel)
 		-- we used explosives, add to cost
 		local current_cost = mem.costs["equipment"]
 		if current_cost == nil then
